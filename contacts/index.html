@@ -1,1 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"> 
+  <title>Contacts | A L</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/customize.css">
+  <style>
+    .main-center-container {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .glass-box.contacts-cover {
+      display: flex;
+      flex-direction: row;
+      gap: 58px;
+      align-items: center;
+      justify-content: center;
+      padding: 54px 46px;
+      background: rgba(255,255,255,0.31);
+      border-radius: 28px;
+      box-shadow: 0 3px 32px 6px rgba(30,40,60,0.12);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1.5px solid rgba(255,255,255,0.13);
+      margin: 0 auto;
+      min-width: 350px;
+    }
+    .contact-icon-btn {
+      width: 84px;
+      height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 24px;
+      background: rgba(30,40,60,0.35);
+      box-shadow: 0 2px 16px rgba(30,40,60,0.13);
+      cursor: pointer;
+      transition: transform 0.14s, background 0.15s;
+      border: none;
+      outline: none;
+      position: relative;
+    }
+    .contact-icon-btn:hover {
+      transform: scale(1.08) translateY(-2px);
+      background: rgba(80,140,255,0.20);
+    }
+    .contact-icon-btn svg {
+      width: 38px;
+      height: 38px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2.3px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke 0.15s;
+    }
+    .contact-icon-btn:active svg {
+      stroke: #70caff;
+    }
+    #copied-popup {
+      position: fixed;
+      left: 50%;
+      bottom: 42px;
+      transform: translateX(-50%);
+      background: rgba(30, 40, 60, 0.89);
+      color: #fff;
+      font-size: 1.13em;
+      padding: 13px 22px;
+      border-radius: 14px;
+      box-shadow: 0 3px 20px rgba(40,60,110,0.19);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 9999;
+      transition: opacity 0.28s;
+      letter-spacing: 1px;
+    }
+    #copied-popup.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    @media (max-width: 600px) {
+      .glass-box.contacts-cover {
+        flex-direction: column;
+        gap: 34px;
+        min-width: unset;
+        padding: 34px 6vw;
+      }
+      .contact-icon-btn {
+        width: 62px;
+        height: 62px;
+      }
+      .contact-icon-btn svg {
+        width: 30px;
+        height: 30px;
+      }
+      .contact-icon-btn svg {
+  display: block;
+  margin: 0 auto;
+  padding: 7px 0 0 0; /* aumenta solo il top padding per tutte */
+}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR START -->
+  <!-- (Copia e incolla qui la TUA NAVBAR, esattamente come già hai!) -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <a href="index.html" class="navbar-home" title="Home">
+        <svg width="24" height="24" fill="white" viewBox="0 0 24 24" style="vertical-align: middle;">
+          <path d="M3 11l9-9 9 9h-2v8a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-4h-2v4a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-8H3z" stroke="white" stroke-width="2" fill="none"/>
+        </svg>
+      </a>
+    </div>
+    <div class="navbar-right">
+      <a href="about.html">ABOUT</a>
+      <a href="contacts.html">CONTACTS</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">PROJECTS</a>
+        <div class="dropdown-content">
+          <a href="project1.html">OPULENT TILING</a>
+          <a href="project2.html">▲ ◼</a>
+          <a href="project3.html">MAZE</a>
+          <a href="project4.html">▲ ◼ ⏺</a>
+          <a href="project5.html">URBAN MYCELIUM</a>
+          <a href="project6.html">HYPNO SPIRAL</a>
+          <a href="project7.html">SUNFLOWER</a>
+          <a href="project8.html">LOCATION OF A CIRCLE</a>
+          <a href="project9.html">DYNAMIC QUAD-SPLIT METER</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- NAVBAR END -->
 
+  <!-- CENTRO PAGINA -->
+  <div class="main-center-container">
+    <div class="glass-box contacts-cover">
+      <!-- Instagram -->
+      <a class="contact-icon-btn" href="https://www.instagram.com/charlie_ff/" target="_blank" title="Instagram">
+        <!-- Instagram SVG, centrata meglio -->
+<svg viewBox="0 0 48 48">
+  <rect x="9" y="9" width="30" height="30" rx="8"/>
+  <circle cx="24" cy="24" r="8.2"/>
+  <circle cx="34" cy="14" r="2.2"/>
+</svg>
+      </a>
+      <!-- Email -->
+      <button class="contact-icon-btn" id="copy-mail-btn" title="Copy e-mail address">
+        
+<!-- Mail SVG, centrata meglio -->
+<svg viewBox="0 0 48 48">
+  <rect x="8" y="13" width="32" height="22" rx="6"/>
+  <polyline points="8,13 24,28 40,13"/>
+</svg>
+      </button>
+    </div>
+    <!-- Popup Copiato -->
+    <div id="copied-popup">E-mail address copied!</div>
+  </div>
+
+  <div class="row one-bottom center">
+    <p>©ARMAND LALA 2025</p>
+  </div>
+
+  <!-- Scripts p5.js + tuoi js per lo sfondo! -->
+  <script src="js/p5.js"></script>
+  <script src="js/p5.sound.min.js"></script>
+  <script src="js/mold.js"></script>
+  <script src="js/sketch.js"></script>
+  <script>
+    // Sostituisci qui con la tua email tra virgolette!
+    const yourEmail = "armand.lala0@gmail.com";
+    const btn = document.getElementById("copy-mail-btn");
+    const popup = document.getElementById("copied-popup");
+    btn.addEventListener("click", () => {
+      navigator.clipboard.writeText(yourEmail).then(() => {
+        popup.classList.add("visible");
+        setTimeout(() => {
+          popup.classList.remove("visible");
+        }, 1700);
+      });
+    });
+  </script>
+</body>
+</html>
