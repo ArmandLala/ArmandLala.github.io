@@ -683,7 +683,7 @@ body {
 
 .glass-box.cover-bg {
   display: flex;
-  align-items: flex-start;        /* titolo al centro verticale */
+  align-items: center;        /* titolo al centro verticale */
   justify-content: center;    /* titolo al centro orizzontale */
 }
 
@@ -712,10 +712,11 @@ body.project0 .glass-box.cover-bg .cover-title {
 }
 
 body.project0 .glass-box.cover-bg .cover-icons {
-    position: absolute; /* sempre assolute */
+    position: absolute; /* già lo è */
     top: 20px;          /* distanza dall’alto della box */
     right: 22px;        /* distanza dal bordo destro */
-    transform: none;    /* rimuove eventuali translate */
+    transform: none;    /* rimuove il translateY */
+    z-index: 3;         /* sopra il titolo e overlay */
 }
 
 
