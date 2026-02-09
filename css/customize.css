@@ -656,12 +656,13 @@ body {
 }
 
 /* ===== COVER PROJECT (solo project pages) ===== */
+/* Copertina project page */
 .glass-box.cover-bg {
   width: 100vw !important;       /* tutta la larghezza della finestra */
   max-width: 100vw !important;   /* togli il max-width di glass-box normale */
   margin: 0 !important;          /* niente centratura, full width */
   min-height: 70vh;              
-  padding: 40px;                 /* spazio interno per titolo/icona */
+  padding: 0 !important;         /* rimuovi padding interno per allineare ai riquadri sotto */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -670,7 +671,7 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  border-radius: 0 !important;   /* se vuoi bordi allineati a lato */
+  border-radius: 0 !important;
 }
 
 .glass-box.cover-bg::before {
