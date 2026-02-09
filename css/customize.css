@@ -702,22 +702,27 @@ body {
   margin: 0;
 }
 
-/* Solo per project0 */
-body.project0 .glass-box.cover-bg .cover-title {
-    position: absolute;
-    top: 50%;          /* titolo al centro verticale */
-    left: 50%;         /* titolo al centro orizzontale */
-    transform: translate(-50%, -50%);
-    margin: 0;
+/* === Project0: titolo centrato e icone in alto a destra === */
+body.project0 .glass-box.cover-bg {
+  position: relative; /* necessario per ancoraggio */
 }
-.glass-box.cover-bg .cover-icons {
-    position: absolute; /* rimane assoluto */
-    top: 20px;          /* distanza dall’alto della box */
-    right: 22px;        /* distanza dal bordo destro */
-    transform: none;    /* rimuovi translateY */
-    display: flex;
-    gap: 16px;          /* come prima */
-    z-index: 3;         /* sopra overlay e titolo */
+
+body.project0 .glass-box.cover-bg .cover-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+body.project0 .glass-box.cover-bg .cover-icons {
+  position: absolute;
+  top: 16px !important;
+  right: 16px !important;
+  transform: none !important;
+  display: flex;
+  gap: 16px;
+  z-index: 4; /* sopra overlay e titolo */
 }
 
 
