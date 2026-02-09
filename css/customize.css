@@ -683,7 +683,7 @@ body {
 
 .glass-box.cover-bg {
   display: flex;
-  align-items: center;        /* titolo al centro verticale */
+  align-items: flex-start;        /* titolo al centro verticale */
   justify-content: center;    /* titolo al centro orizzontale */
 }
 
