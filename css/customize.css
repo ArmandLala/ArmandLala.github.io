@@ -710,13 +710,14 @@ body.project0 .glass-box.cover-bg .cover-title {
     transform: translate(-50%, -50%);
     margin: 0;
 }
-
-body.project0 .glass-box.cover-bg .cover-icons {
-    position: absolute; /* già lo è */
+.glass-box.cover-bg .cover-icons {
+    position: absolute; /* rimane assoluto */
     top: 20px;          /* distanza dall’alto della box */
     right: 22px;        /* distanza dal bordo destro */
-    transform: none;    /* rimuove il translateY */
-    z-index: 3;         /* sopra il titolo e overlay */
+    transform: none;    /* rimuovi translateY */
+    display: flex;
+    gap: 16px;          /* come prima */
+    z-index: 3;         /* sopra overlay e titolo */
 }
 
 
