@@ -657,8 +657,10 @@ body {
 
 /* ===== COVER PROJECT (solo project pages) ===== */
 .glass-box.cover-bg {
+  width: 85vw;          /* stesso dei blocchi sotto */
+  max-width: 950px;     /* allineato */
   min-height: 70vh;
-  padding: 0;
+  padding: 38px;         /* uguale agli altri blocchi, o come vuoi */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -668,6 +670,7 @@ body {
   position: relative;
   overflow: hidden;
 }
+
 
 .glass-box.cover-bg::before {
   content: "";
