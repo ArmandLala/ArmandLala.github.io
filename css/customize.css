@@ -657,25 +657,19 @@ body {
 
 /* Copertina project page come sfondo dell'intera box */
 .glass-box.cover-bg {
-  width: 85vw;             /* stessa larghezza delle altre glass-box */
-  max-width: 950px;
-  margin: 0 auto;          /* centrata */
-  min-height: 400px;       /* o quanto vuoi per l’altezza della box */
-  padding: 20px;           /* puoi ridurre il padding interno se vuoi */
-  
-  background-size: cover;       /* l'immagine riempie tutta la box */
-  background-position: center;  /* centrata */
+  /* NON ridefinire width, max-width, margin */
+  min-height: 400px;
+
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 
   display: flex;
-  align-items: flex-end;   /* titolo + icone in basso se vuoi */
+  align-items: flex-end;
   justify-content: center;
   position: relative;
-  border-radius: 28px;
-  box-shadow: 0 3px 32px 6px rgba(30,40,60,0.11);
-  color: #fff;
-  text-align: center;
 }
+
 
 /* Overlay scuro sopra l'immagine */
 .glass-box.cover-bg::before {
