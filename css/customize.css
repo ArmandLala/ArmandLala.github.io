@@ -702,5 +702,20 @@ body {
   margin: 0;
 }
 
+/* Solo per project0 */
+body.project0 .glass-box.cover-bg .cover-title {
+    position: absolute;
+    top: 50%;          /* titolo al centro verticale */
+    left: 50%;         /* titolo al centro orizzontale */
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+body.project0 .glass-box.cover-bg .cover-icons {
+    position: absolute; /* sempre assolute */
+    top: 20px;          /* distanza dall’alto della box */
+    right: 22px;        /* distanza dal bordo destro */
+    transform: none;    /* rimuove eventuali translate */
+}
 
 
