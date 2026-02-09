@@ -704,25 +704,26 @@ body {
 
 /* === Project0: titolo centrato e icone in alto a destra === */
 body.project0 .glass-box.cover-bg {
-  position: relative; /* necessario per ancoraggio */
+  position: relative !important; /* ancora più sicuro */
 }
 
 body.project0 .glass-box.cover-bg .cover-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 3 !important;
 }
 
 body.project0 .glass-box.cover-bg .cover-icons {
-  position: absolute;
+  position: absolute !important;
   top: 16px !important;
   right: 16px !important;
   transform: none !important;
-  display: flex;
-  gap: 16px;
-  z-index: 4; /* sopra overlay e titolo */
+  display: flex !important;
+  gap: 16px !important;
+  z-index: 4 !important;
 }
+
 
 
