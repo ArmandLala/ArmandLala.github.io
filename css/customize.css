@@ -655,10 +655,10 @@ body {
   }
 }
 
-/* ====== PROJECT COVER BACKGROUND (solo dove serve) ====== */
-.cover-bg {
-  min-height: 65vh;
-  padding: 40px;
+/* ===== COVER PROJECT (solo project pages) ===== */
+.glass-box.cover-bg {
+  min-height: 70vh;
+  padding: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -666,9 +666,10 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 }
 
-.cover-bg::before {
+.glass-box.cover-bg::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -676,10 +677,9 @@ body {
   border-radius: inherit;
 }
 
-.cover-bg .cover-head {
+.glass-box.cover-bg .cover-head {
   position: relative;
   z-index: 2;
 }
-
 
 
