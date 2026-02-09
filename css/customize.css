@@ -655,5 +655,31 @@ body {
   }
 }
 
+/* ====== PROJECT COVER BACKGROUND (solo dove serve) ====== */
+.cover-bg {
+  min-height: 65vh;
+  padding: 40px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cover-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  border-radius: inherit;
+}
+
+.cover-bg .cover-head {
+  position: relative;
+  z-index: 2;
+}
+
 
 
