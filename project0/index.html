@@ -67,27 +67,26 @@
 
 
     <!-- Blocco 2: DESCRIZIONE -->
-    <div class="glass-box">
-      <p>
-       The project deals with the development of complex surfaces and tessellation to enable fast, easy, and efficient construction and eventual disassembly. Starting from the perimeter of a random area, the surface is developed through a system of anchoring and non-anchoring constraints. This is followed by the tessellation process, the module development process, and finally the fabrication process.
+<div class="glass-box">
+  <p>The project deals with the development of complex surfaces and tessellation to enable fast, easy, and efficient construction and eventual disassembly. Starting from the perimeter of a random area, the surface is developed through a system of anchoring and non-anchoring constraints. This is followed by the tessellation process, the module development process, and finally the fabrication process.</p>
 
-Starting from a closed curve (random perimeter) and three points on which ellipses are generated—whose radii and inclinations in 3D space are interactive—we create a flat surface that is then transformed into a triangular mesh. From this triangular mesh, with the help of Kangaroo, various constraints and stresses are applied in order to deform the mesh “net” in 3D space. In our case, the points corresponding to the long sides of the outer perimeter and those of the ellipses are anchored, while the transitional areas are left free.
+  <p>Starting from a closed curve (random perimeter) and three points on which ellipses are generated—whose radii and inclinations in 3D space are interactive—we create a flat surface that is then transformed into a triangular mesh. From this triangular mesh, with the help of Kangaroo, various constraints and stresses are applied in order to deform the mesh “net” in 3D space. In our case, the points corresponding to the long sides of the outer perimeter and those of the ellipses are anchored, while the transitional areas are left free.</p>
 
-From the resulting 3D triangular mesh, a new triangular remesh is generated to avoid over-stretched triangles after the Kangaroo simulation. We then proceed to the creation of an NGon mesh, with the objective of preserving the original volumetric development. The same objective is pursued during the planarization of each individual module, allowing for a limited degree of elasticity.
+  <p>From the resulting 3D triangular mesh, a new triangular remesh is generated to avoid over-stretched triangles after the Kangaroo simulation. We then proceed to the creation of an NGon mesh, with the objective of preserving the original volumetric development. The same objective is pursued during the planarization of each individual module, allowing for a limited degree of elasticity.</p>
 
-A C# script is used to check the sum of the internal angles as a further test of planarity (based on the number of triangles composing each NGon module, the script calculates the expected internal angle and detects any anomalies). A curvature analysis is then performed on the mesh before and after planarization, confirming an acceptable geometric configuration for our case.
+  <p>A C# script is used to check the sum of the internal angles as a further test of planarity (based on the number of triangles composing each NGon module, the script calculates the expected internal angle and detects any anomalies). A curvature analysis is then performed on the mesh before and after planarization, confirming an acceptable geometric configuration for our case.</p>
 
-The development of the module and the study of joints stem from the following question: can we create both a “structural” system and joints between elements, in order to obtain a skeleton capable of holding the entire structure together? After extensive research and testing, the chosen strategy was to generate fins for each module along its normal direction, taking into account also the adjacent modules. Each flap includes a curved appendix that increases the strength of the joint. The entire system is connected using 2.5 mm zip ties.
+  <p>The development of the module and the study of joints stem from the following question: can we create both a “structural” system and joints between elements, in order to obtain a skeleton capable of holding the entire structure together? After extensive research and testing, the chosen strategy was to generate fins for each module along its normal direction, taking into account also the adjacent modules. Each flap includes a curved appendix that increases the strength of the joint. The entire system is connected using 2.5 mm zip ties.</p>
 
-A C# script was created within Grasshopper to generate, through numerical parameters and the polylines of the NGon modules, the fins and the necessary holes following the logic “for each side of each module, and then for all modules.” Additional precautions were implemented, such as reducing the length of the flaps to avoid unwanted intersections. The script generates flaps and connectors on planes coincident with the average plane of each module. At the end of the process, the script groups the elements belonging to each module and distributes them on the global XY plane according to a specified spacing value.
+  <p>A C# script was created within Grasshopper to generate, through numerical parameters and the polylines of the NGon modules, the fins and the necessary holes following the logic “for each side of each module, and then for all modules.” Additional precautions were implemented, such as reducing the length of the flaps to avoid unwanted intersections. The script generates flaps and connectors on planes coincident with the average plane of each module. At the end of the process, the script groups the elements belonging to each module and distributes them on the global XY plane according to a specified spacing value.</p>
 
-The development of each module follows the sequence shown in the side image: after folding all the flaps, a polygonal module is obtained. Once the Grasshopper workflow was completed, the cut files for laser cutting were prepared. The “padlock” elements—strips used to close the openings of the holes in the entire model—were also generated.
+  <p>The development of each module follows the sequence shown in the side image: after folding all the flaps, a polygonal module is obtained. Once the Grasshopper workflow was completed, the cut files for laser cutting were prepared. The “padlock” elements—strips used to close the openings of the holes in the entire model—were also generated.</p>
 
-All components are connected to two basic modules that provide support for the overall structure, again using zip ties as in the rest of the model. These two base elements fit together and include additional safety hooks, also secured with zip ties.
+  <p>All components are connected to two basic modules that provide support for the overall structure, again using zip ties as in the rest of the model. These two base elements fit together and include additional safety hooks, also secured with zip ties.</p>
 
-In conclusion, the space we aim to create is not a standard space with a predefined form. Our intention is not to define a fixed set of rules, but rather to develop a method that can be applied to different contexts and that possesses the flexibility to adapt to various scenarios, particularly for the coverage of large spans.
-      </p>
-    </div>
+  <p>In conclusion, the space we aim to create is not a standard space with a predefined form. Our intention is not to define a fixed set of rules, but rather to develop a method that can be applied to different contexts and that possesses the flexibility to adapt to various scenarios, particularly for the coverage of large spans.</p>
+</div>
+
     <!-- Blocco 3: GALLERIA -->
     <div class="glass-box">
       <h3>IMAGE GALLERY</h3>
