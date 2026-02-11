@@ -756,21 +756,3 @@ body.project0 .glass-box p {
   margin: 0;                   /* elimina margini interni */
   transform: none;
 
-
-body.project0 .gallery-slider {
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 10px 0;
-}
-
-body.project0 .gallery-track {
-  display: inline-flex;
-  gap: 10px;
-}
-
-body.project0 .gallery-img {
-  height: 150px;
-  cursor: pointer;
-  border-radius: 6px;
-  flex-shrink: 0;
-}
