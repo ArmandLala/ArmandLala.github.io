@@ -714,6 +714,13 @@ body.project0 .glass-box.cover-bg .cover-title {
   transform: translate(-50%, -50%) !important;
   z-index: 3 !important;
 }
+/* Testo descrizione project0 giustificato */
+body.project0 .glass-box p {
+  text-align: justify;
+  line-height: 1.6;
+  hyphens: auto;
+  margin-bottom: 1em;
+}
 
 
 
