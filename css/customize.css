@@ -723,16 +723,38 @@ body.project0 .glass-box p {
 }
 
 .contact-icon-btn {
+  display: flex;               /* centra tutto verticalmente e orizzontalmente */
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;                 /* larghezza uniforme */
+  height: 42px;                /* altezza uniforme */
+
+  margin: 0 5px;               /* se vuoi spazio tra i bottoni */
   padding: 0;
-  line-height: 0;
+  line-height: normal;
   font-size: 0;
-}
-.contact-icon-btn svg {
-  display: block;
+
+  border: none;                /* solo per i button */
+  border-radius: 8px;
+  background: rgba(30,40,60,0.10);
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.2s, transform 0.2s;
 }
 
-#copy-mail-btn svg {
-  transform: translateY(-2px);
+.contact-icon-btn:hover {
+  background: #2396e2;
+  transform: scale(1.12);
 }
+
+.contact-icon-btn svg {
+  display: block;
+  width: 60%;                  /* dimensione proporzionale all’icona */
+  height: 60%;
+  margin: 0;                   /* elimina margini interni */
+  transform: none;
+
 
 
