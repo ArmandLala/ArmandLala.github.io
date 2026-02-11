@@ -757,30 +757,20 @@ body.project0 .glass-box p {
   transform: none;
 
 
-.gallery-slider {
-  overflow-x: auto;        /* abilita lo scroll orizzontale */
-  white-space: nowrap;     /* immagini in fila unica */
+body.project0 .gallery-slider {
+  overflow-x: auto;
+  white-space: nowrap;
   padding: 10px 0;
 }
 
-.gallery-slider::-webkit-scrollbar {
-  height: 8px;             /* altezza della scrollbar */
+body.project0 .gallery-track {
+  display: inline-flex;
+  gap: 10px;
 }
 
-.gallery-slider::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.3);
-  border-radius: 4px;
-}
-
-.gallery-track {
-  display: inline-flex;    /* fila orizzontale */
-  gap: 10px;               /* spazio tra immagini */
-}
-
-.gallery-img {
-  height: 150px;           /* altezza delle anteprime */
+body.project0 .gallery-img {
+  height: 150px;
   cursor: pointer;
   border-radius: 6px;
-  flex-shrink: 0;          /* non ridurre l’immagine */
+  flex-shrink: 0;
 }
-
