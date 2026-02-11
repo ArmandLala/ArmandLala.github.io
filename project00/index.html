@@ -3,14 +3,14 @@
 <head>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta charset="utf-8"> 
-  <title>OPULENT TILING | A L</title>
+  <title>PAPER ARCHITECTURE | A L</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet">
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/skeleton.css">
   <link rel="stylesheet" href="/css/customize.css">
 </head>
-<body>
+<body class="project0">
  <!-- NAVBAR START -->
 <nav class="navbar">
   <div class="navbar-left">
@@ -44,52 +44,85 @@
 <!-- NAVBAR END -->
   
   <div class="project-glass-wrapper">
-    <!-- Blocco 1: COPERTINA -->
-    <div class="glass-box">
+  <!-- Blocco 1: COPERTINA -->
+<div class="glass-box cover-bg" style="background-image: url('/images/project00/project00.png');">
+
+<div class="cover-icons">
+  <!-- ICONA GRASSHOPPER -->
+  <a href="/doc/TESS_4.gh" download title="Scarica file Grasshopper" class="icon-btn">
+    <span class="icon-gh">GH</span>
+  </a>
+
+  <!-- ICONA PDF -->
+  <a href="/doc/Boards_ MORPHO·DOME.pdf" target="_blank" download title="Scarica PDF" class="icon-btn">
+    <svg height="20" width="20" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="2">
+      <rect x="4" y="2" width="12" height="16" rx="2" fill="none"/>
+      <path d="M8 6h4M8 10h4M8 14h4"/>
+    </svg>
+  </a>
+</div>
+
+
+
   <div class="cover-head">
-    <h1 class="cover-title">OPULENT TILING</h1>
-    <div class="cover-icons">
-      <a href="https://editor.p5js.org/armand.lala0/sketches/Hqx9ch5ia" target="_blank" title="Vai al progetto JS" class="icon-btn">
-        <span class="icon-js">JS*</span>
-      </a>
-      <a href="/doc/project1.pdf" target="_blank" download title="Scarica PDF" class="icon-btn">
-        <svg height="20" width="20" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="2">
-          <rect x="4" y="2" width="12" height="16" rx="2" fill="none"/>
-          <path d="M8 6h4M8 10h4M8 14h4"/>
-        </svg>
-      </a>
-    </div>
+    <h1 class="cover-title">MORPHO·DOME</h1>
   </div>
-  <img src="/images/blue.png" alt="Blue Project" class="cover-img">
 
-    </div>
+</div>
+
+
     <!-- Blocco 2: DESCRIZIONE -->
-    <div class="glass-box">
-      <p>
-        This project creates a richly subdivided grid, where each subcell is filled with a color from a carefully chosen blue and gold palette, and contains either a diamond or an ellipse shape whose color is the exact inverse of the background. The key data structure, defined at the start (let gridData;), is a deeply nested array that holds the x, y, width, height, and color index for every subcell, as constructed by the buildGrid() function (lines 37–67).
-The grid is initialized in the setup() function (lines 22–28), where the canvas size is set to the window dimensions and buildGrid() is called to generate the multi-level array. Each main grid cell (rows and columns set by let rows and let cols) is itself subdivided into a random number of subcells both vertically and horizontally (minSub and maxSub). For each subcell, its position, size, and a random color from the paletteRGB array are stored.
-Rendering is handled by drawGrid() (lines 70–112), which loops through every subcell in the grid. For each, it first fills the background rectangle with its palette color. Then, based on the global boolean showAllEllipse (line 20), either a diamond (created by connecting the midpoints of each side using beginShape()/endShape()) or an ellipse (drawn with ellipse(cx, cy, w - 2, h - 2), so it is almost perfectly inscribed in the cell) is drawn at the center. The shape uses the inverse of the background color to create a visually strong contrast.
-Interactivity is added with the mousePressed() function (lines 115–148). A left mouse click on any subcell changes its color to a different palette value, by updating the fifth element of that subcell’s data array. A right click anywhere toggles showAllEllipse globally, causing all diamonds to instantly switch to ellipses (and vice versa). To prevent the default context menu on right click, document.oncontextmenu = () => false; is used.
-Overall, this sketch combines randomization, interaction, and color theory to produce a modernist, modular composition reminiscent of contemporary graphic design, with every detail (color, shape, and behavior) controlled by simple, readable code and explained through comments in each block.
+<div class="glass-box">
+  <p>The project deals with the development of complex surfaces and tessellation to enable fast, easy, and efficient construction and eventual disassembly. Starting from the perimeter of a random area, the surface is developed through a system of anchoring and non-anchoring constraints. This is followed by the tessellation process, the module development process, and finally the fabrication process.</p>
 
-      </p>
-    </div>
-    <!-- Blocco 3: GALLERIA -->
-    <div class="glass-box">
-      <h3>IMAGE GALLERY</h3>
-      <div class="gallery-row">
-        <img src="/images/project_1/1.png" alt="img1" class="gallery-img">
-        <img src="/images/project_1/2.png" alt="img2" class="gallery-img">
-        <img src="/images/project_1/3.png" alt="img3" class="gallery-img">
-        <img src="/images/project_1/4.png" alt="img4" class="gallery-img">
-        <img src="/images/project_1/1.gif" alt="img1" class="gallery-img">
-        <!-- altre immagini se vuoi -->
-      </div>
-    </div>
+  <p>Starting from a closed curve (random perimeter) and three points on which ellipses are generated—whose radii and inclinations in 3D space are interactive—we create a flat surface that is then transformed into a triangular mesh. From this triangular mesh, with the help of Kangaroo, various constraints and stresses are applied in order to deform the mesh “net” in 3D space. In our case, the points corresponding to the long sides of the outer perimeter and those of the ellipses are anchored, while the transitional areas are left free.</p>
+
+  <p>From the resulting 3D triangular mesh, a new triangular remesh is generated to avoid over-stretched triangles after the Kangaroo simulation. We then proceed to the creation of an NGon mesh, with the objective of preserving the original volumetric development. The same objective is pursued during the planarization of each individual module, allowing for a limited degree of elasticity.</p>
+
+  <p>A C# script is used to check the sum of the internal angles as a further test of planarity (based on the number of triangles composing each NGon module, the script calculates the expected internal angle and detects any anomalies). A curvature analysis is then performed on the mesh before and after planarization, confirming an acceptable geometric configuration for our case.</p>
+
+  <p>The development of the module and the study of joints stem from the following question: can we create both a “structural” system and joints between elements, in order to obtain a skeleton capable of holding the entire structure together? After extensive research and testing, the chosen strategy was to generate fins for each module along its normal direction, taking into account also the adjacent modules. Each flap includes a curved appendix that increases the strength of the joint. The entire system is connected using 2.5 mm zip ties.</p>
+
+  <p>A C# script was created within Grasshopper to generate, through numerical parameters and the polylines of the NGon modules, the fins and the necessary holes following the logic “for each side of each module, and then for all modules.” Additional precautions were implemented, such as reducing the length of the flaps to avoid unwanted intersections. The script generates flaps and connectors on planes coincident with the average plane of each module. At the end of the process, the script groups the elements belonging to each module and distributes them on the global XY plane according to a specified spacing value.</p>
+
+  <p>The development of each module follows the sequence shown in the side image: after folding all the flaps, a polygonal module is obtained. Once the Grasshopper workflow was completed, the cut files for laser cutting were prepared. The “padlock” elements—strips used to close the openings of the holes in the entire model—were also generated.</p>
+
+  <p>All components are connected to two basic modules that provide support for the overall structure, again using zip ties as in the rest of the model. These two base elements fit together and include additional safety hooks, also secured with zip ties.</p>
+
+  <p>In conclusion, the space we aim to create is not a standard space with a predefined form. Our intention is not to define a fixed set of rules, but rather to develop a method that can be applied to different contexts and that possesses the flexibility to adapt to various scenarios, particularly for the coverage of large spans.</p>
+</div>
+
+<!-- Blocco 3: GALLERIA -->
+<div class="glass-box">
+  <h3>IMAGE GALLERY</h3>
+  <div class="gallery-row">
+    <!-- Cartella data -->
+    <img src="/images/project0/data/axo2.png" alt="axo2" class="gallery-img">
+    <img src="/images/project0/data/axo1.png" alt="axo1" class="gallery-img">
+    <img src="/images/project0/data/sez1.png" alt="sez1" class="gallery-img">
+    <img src="/images/project0/data/ppt.png" alt="ppt" class="gallery-img">
+    <img src="/images/project0/data/ppt2.png" alt="ppt2" class="gallery-img">
+    <img src="/images/project0/data/modul0.png" alt="modul0" class="gallery-img">
+    <img src="/images/project0/data/modul1.png" alt="modul1" class="gallery-img">
+
+    <!-- Cartella mod -->
+    <img src="/images/project0/mod/mod7.JPEG" alt="mod7" class="gallery-img">
+    <img src="/images/project0/mod/mod8.JPEG" alt="mod8" class="gallery-img">
+    <img src="/images/project0/mod/mod6.JPEG" alt="mod6" class="gallery-img">
+    <img src="/images/project0/mod/mod4.JPEG" alt="mod4" class="gallery-img">
+    <img src="/images/project0/mod/mod1.JPEG" alt="mod1" class="gallery-img">
+
+    <!-- Cartella render -->
+    <img src="/images/project0/render/1.jpg" alt="render1" class="gallery-img">
+    <img src="/images/project0/render/4.jpg" alt="render4" class="gallery-img">
+    <img src="/images/project0/render/3.jpg" alt="render3" class="gallery-img">
+    <img src="/images/project0/render/2.jpg" alt="render2" class="gallery-img">
+    <img src="/images/project0/render/6.jpg" alt="render6" class="gallery-img">
   </div>
+</div>
 
     <div class="row one-bottom center">
-    <p>©ARMAND LALA 2025</p>
+    <p>©ARMAND LALA 2026</p>
   </div>
 </div>
   
