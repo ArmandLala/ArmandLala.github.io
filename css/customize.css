@@ -384,14 +384,14 @@ body {
 
 .cover-icons {
   position: absolute;
-  top: 50%;
-  right: 34px;   /* Cambia qui se vuoi più spazio dal bordo destro */
-  transform: translateY(-50%);
+  top: 16px;
+  right: 16px;
   display: flex;
-  flex-direction: row;  /* <-- ORIZZONTALE */
+  flex-direction: row;
   gap: 16px;
-  z-index: 2;
+  z-index: 4;
 }
+
 
 .cover-row {
   width: 100%;
