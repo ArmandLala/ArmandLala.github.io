@@ -715,15 +715,6 @@ body.project0 .glass-box.cover-bg .cover-title {
   z-index: 3 !important;
 }
 
-body.project0 .glass-box.cover-bg .cover-icons {
-  position: absolute !important;
-  top: 16px !important;
-  right: 16px !important;
-  transform: none !important;
-  display: flex !important;
-  gap: 16px !important;
-  z-index: 4 !important;
-}
 
 
 
