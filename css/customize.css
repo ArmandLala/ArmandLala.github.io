@@ -722,6 +722,14 @@ body.project0 .glass-box p {
   margin-bottom: 1em;
 }
 
+.contact-icon-btn {
+  padding: 0;
+  line-height: 0;
+  font-size: 0;
+}
+.contact-icon-btn svg {
+  display: block;
+}
 
 
 
