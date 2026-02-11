@@ -731,5 +731,8 @@ body.project0 .glass-box p {
   display: block;
 }
 
+#copy-mail-btn svg {
+  transform: translateY(-2px);
+}
 
 
