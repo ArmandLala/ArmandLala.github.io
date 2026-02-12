@@ -742,27 +742,25 @@ body.project0 .glass-box p {
   transform: none;
 }
 /*__________________________________*/
-.glass-box.gallery-wrapper {
+.gallery-wrapper {
   position: relative;
   overflow: hidden;
 }
 
 .gallery-row {
   display: flex;
-  flex-wrap: nowrap;   /* 🔴 QUESTO È LA CHIAVE */
+  flex-wrap: nowrap;
   gap: 12px;
-  overflow: hidden;
+  transition: transform 0.4s ease;
+  justify-content: flex-start;
 }
 
-
 .gallery-img {
-  flex: 0 0 calc(20% - 12px); /* 5 immagini per volta */
+  width: 160px;
   height: 120px;
+  flex: 0 0 auto;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(30,40,60,0.08);
-  cursor: pointer;
-  transition: transform 0.14s, box-shadow 0.14s;
 }
 
 .gallery-img:hover {
