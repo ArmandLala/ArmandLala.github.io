@@ -787,4 +787,13 @@ ________
   color: #74d5ff;
 }
 
+	.gallery-row.is-slider {
+  flex-wrap: nowrap;
+  overflow: hidden;
+  justify-content: flex-start;
+  max-width: 740px;   /* mostra solo 5 immagini */
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
