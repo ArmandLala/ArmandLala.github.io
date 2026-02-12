@@ -191,6 +191,34 @@ document.addEventListener('keydown', function(e) {
 });
 </script>
 
+<script>
+document.querySelectorAll('.gallery-row').forEach(gallery => {
+  const images = gallery.querySelectorAll('img');
+
+  if(images.length > 5) {
+    gallery.classList.add('is-slider');
+
+    const arrows = document.createElement('div');
+    arrows.className = 'gallery-arrows';
+
+    const left = document.createElement('button');
+    left.innerHTML = '❮';
+    left.className = 'gallery-arrow-btn';
+
+    const right = document.createElement('button');
+    right.innerHTML = '❯';
+    right.className = 'gallery-arrow-btn';
+
+    arrows.appendChild(left);
+    arrows.appendChild(right);
+    gallery.after(arrows);
+
+    left.onclick = () => gallery.scrollLeft -= 300;
+    right.onclick = () => gallery.scrollLeft += 300;
+  }
+});
+</script>
+
 </body>
 </html>
 
