@@ -95,7 +95,9 @@
 <!-- Blocco 3: GALLERIA -->
 <div class="glass-box">
   <h3>IMAGE GALLERY</h3>
-  <div class="gallery-row">
+
+  <div class="gallery-slider-wrap">
+    <div class="gallery-row">
     <!-- Cartella data -->
     <img src="/images/project0/data/axo2.png" alt="axo2" class="gallery-img">
     <img src="/images/project0/data/axo1.png" alt="axo1" class="gallery-img">
@@ -211,12 +213,13 @@ document.querySelectorAll('.gallery-row').forEach(gallery => {
 
     arrows.appendChild(left);
     arrows.appendChild(right);
-    gallery.after(arrows);
+    gallery.parentNode.after(arrows); // metti le frecce sotto il wrapper
 
     left.onclick = () => gallery.scrollLeft -= 300;
     right.onclick = () => gallery.scrollLeft += 300;
   }
 });
+
 </script>
 
 </body>
