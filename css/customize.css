@@ -755,3 +755,61 @@ body.project0 .glass-box p {
   height: 60%;
   margin: 0;                   /* elimina margini interni */
   transform: none;
+/*__________________________________*/
+.gallery-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gallery-row {
+  display: flex;
+  overflow: hidden;
+  gap: 12px;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.gallery-img {
+  flex: 0 0 calc(20% - 10px); /* 5 immagini per volta */
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(60,60,80,0.10);
+  cursor: pointer;
+  transition: transform 0.14s, box-shadow 0.14s;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 22px rgba(80,110,220,0.17);
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: #fff;
+  background: rgba(30,40,60,0.6);
+  border: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+#gallery-prev { left: -10px; }
+#gallery-next { right: -10px; }
+
+.gallery-arrow:hover {
+  background: rgba(30,40,60,0.9);
+}
