@@ -762,19 +762,16 @@ body.project0 .glass-box p {
   max-width: 1000px;
   margin: 40px auto;
   padding: 24px;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.12);
-  box-shadow: 0 6px 32px rgba(60,60,80,0.16);
   overflow: hidden;
 }
 
 .gallery-row {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap;   /* 🔴 QUESTO È LA CHIAVE */
   gap: 12px;
-  overflow: hidden; /* JS gestisce lo scroll */
-  scroll-behavior: smooth;
+  overflow: hidden;
 }
+
 
 .gallery-img {
   flex: 0 0 calc(20% - 12px); /* 5 immagini per volta */
