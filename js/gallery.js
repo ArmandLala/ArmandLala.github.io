@@ -1,6 +1,7 @@
 const row = document.querySelector(".gallery-row");
 const prev = document.getElementById("gallery-prev");
 const next = document.getElementById("gallery-next");
+const imgs = Array.from(row.children);
 
 function getStep() {
   const img = row.querySelector(".gallery-img");
@@ -9,32 +10,35 @@ function getStep() {
   return img.offsetWidth + gap;
 }
 
-function scrollRow(direction) {
-  row.scrollBy({
-    left: direction * getStep(),
-    behavior: "smooth"
+// Scorrimento frecce
+next.addEventListener("click", () => {
+  row.scrollBy({ left: getStep(), behavior: "smooth" });
+});
+prev.addEventListener("click", () => {
+  row.scrollBy({ left: -getStep(), behavior: "smooth" });
+});
+
+// Intersection Observer
+let observerOptions = {
+  root: row,
+  threshold: 0.01
+};
+
+const firstImg = imgs[0];
+const lastImg = imgs[imgs.length - 1];
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.target === firstImg) {
+      prev.style.opacity = entry.isIntersecting ? 0 : 1;
+      prev.style.pointerEvents = entry.isIntersecting ? "none" : "auto";
+    }
+    if(entry.target === lastImg) {
+      next.style.opacity = entry.isIntersecting ? 0 : 1;
+      next.style.pointerEvents = entry.isIntersecting ? "none" : "auto";
+    }
   });
-}
+}, observerOptions);
 
-// Event listener frecce
-next.addEventListener("click", () => scrollRow(1));
-prev.addEventListener("click", () => scrollRow(-1));
-
-// Funzione per mostrare/nascondere frecce
-function updateArrows() {
-  const scrollLeft = Math.round(row.scrollLeft);
-  const maxScroll = row.scrollWidth - row.clientWidth;
-
-  // Un piccolo margine per evitare problemi con frazioni di pixel
-  const epsilon = 2; 
-
-  prev.style.display = scrollLeft > epsilon ? 'flex' : 'none';
-  next.style.display = scrollLeft < maxScroll - epsilon ? 'flex' : 'none';
-}
-
-// Aggiornamento continuo
-row.addEventListener('scroll', updateArrows);
-window.addEventListener('resize', updateArrows);
-
-// Inizializza frecce
-updateArrows();
+observer.observe(firstImg);
+observer.observe(lastImg);
