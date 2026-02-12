@@ -758,23 +758,31 @@ body.project0 .glass-box p {
 /*__________________________________*/
 .gallery-wrapper {
   position: relative;
-  display: flex;
-  align-items: center;
   width: 100%;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 40px auto;          /* puoi modificare il margine come vuoi */
+  padding: 24px;               /* come glass-box */
+  border-radius: 16px;         /* come glass-box */
+  background: rgba(255,255,255,0.12); /* effetto vetro */
+  box-shadow: 0 6px 32px rgba(60,60,80,0.16);
+  overflow: hidden;            /* impedisce di andare a capo */
 }
 
 .gallery-row {
   display: flex;
-  overflow: hidden;
+  flex-wrap: nowrap;           /* importantissimo: tutte le immagini in riga */
   gap: 12px;
+  overflow-x: auto;            /* scroll orizzontale */
   scroll-behavior: smooth;
-  width: 100%;
+  -webkit-overflow-scrolling: touch; /* scroll fluido su mobile */
+}
+
+.gallery-row::-webkit-scrollbar {
+  display: none; /* nasconde la scrollbar */
 }
 
 .gallery-img {
-  flex: 0 0 calc(20% - 12px);
+  flex: 0 0 calc(20% - 12px); /* 5 immagini visibili */
   height: 120px;
   object-fit: cover;
   border-radius: 12px;
