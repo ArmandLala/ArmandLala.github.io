@@ -9,7 +9,6 @@ function getStep() {
   return img.offsetWidth + gap;
 }
 
-// Funzione per scrollare con animazione
 function scrollRow(direction) {
   row.scrollBy({
     left: direction * getStep(),
@@ -17,22 +16,25 @@ function scrollRow(direction) {
   });
 }
 
-// Event listener sulle frecce
+// Event listener frecce
 next.addEventListener("click", () => scrollRow(1));
 prev.addEventListener("click", () => scrollRow(-1));
 
-// Mostra/nascondi frecce in base alla posizione
+// Funzione per mostrare/nascondere frecce
 function updateArrows() {
-  const scrollLeft = row.scrollLeft;
+  const scrollLeft = Math.round(row.scrollLeft);
   const maxScroll = row.scrollWidth - row.clientWidth;
 
-  prev.style.display = scrollLeft > 0 ? 'flex' : 'none';
-  next.style.display = scrollLeft < maxScroll - 1 ? 'flex' : 'none';
+  // Un piccolo margine per evitare problemi con frazioni di pixel
+  const epsilon = 2; 
+
+  prev.style.display = scrollLeft > epsilon ? 'flex' : 'none';
+  next.style.display = scrollLeft < maxScroll - epsilon ? 'flex' : 'none';
 }
 
-// Aggiorna le frecce mentre scrolli manualmente
+// Aggiornamento continuo
 row.addEventListener('scroll', updateArrows);
 window.addEventListener('resize', updateArrows);
 
-// Inizializza le frecce
+// Inizializza frecce
 updateArrows();
