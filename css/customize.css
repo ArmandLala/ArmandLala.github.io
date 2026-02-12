@@ -774,11 +774,11 @@ body.project0 .glass-box p {
 }
 
 .gallery-img {
-  flex: 0 0 calc(20% - 10px); /* 5 immagini per volta */
-  height: 90px;
+  flex: 0 0 calc(20% - 12px);
+  height: 120px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(60,60,80,0.10);
+  box-shadow: 0 2px 12px rgba(30,40,60,0.08);
   cursor: pointer;
   transition: transform 0.14s, box-shadow 0.14s;
 }
@@ -792,24 +792,26 @@ body.project0 .glass-box p {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2em;
+  font-size: 1.5em;
   color: #fff;
-  background: rgba(30,40,60,0.6);
+  background: rgba(255,255,255,0.25);
   border: none;
-  border-radius: 8px;
-  width: 40px;
-  height: 60px;
+  border-radius: 12px;
+  width: 42px;
+  height: 42px;
   cursor: pointer;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s;
+  box-shadow: 0 2px 12px rgba(30,40,60,0.08);
+  transition: background 0.2s, transform 0.2s;
 }
-
-#gallery-prev { left: -10px; }
-#gallery-next { right: -10px; }
-
 .gallery-arrow:hover {
-  background: rgba(30,40,60,0.9);
+  background: rgba(255,255,255,0.4);
+  transform: translateY(-50%) scale(1.1);
 }
+	
+#gallery-prev { left: 12px; }
+#gallery-next { right: 12px; }
+
