@@ -760,21 +760,19 @@ body.project0 .glass-box p {
   position: relative;
   width: 100%;
   max-width: 1000px;
-  margin: 40px auto;          /* puoi modificare il margine come vuoi */
-  padding: 24px;               /* come glass-box */
-  border-radius: 16px;         /* come glass-box */
-  background: rgba(255,255,255,0.12); /* effetto vetro */
+  margin: 40px auto;
+  padding: 24px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.12);
   box-shadow: 0 6px 32px rgba(60,60,80,0.16);
-  overflow: hidden;            /* impedisce di andare a capo */
+  overflow: hidden;
 }
 
 .gallery-row {
   display: flex;
-  flex-wrap: nowrap;           /* importantissimo: tutte le immagini in riga */
+  flex-wrap: nowrap;
   gap: 12px;
-  overflow-x: auto;            /* scroll orizzontale */
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; /* scroll fluido su mobile */
+  overflow-x: hidden; /* il JS gestisce lo scroll */
 }
 
 .gallery-row::-webkit-scrollbar {
