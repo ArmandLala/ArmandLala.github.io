@@ -744,24 +744,33 @@ body.project0 .glass-box p {
 /*__________________________________*/
 .gallery-wrapper {
   position: relative;
+  width: 100%;
   overflow: hidden;
 }
 
 .gallery-row {
   display: flex;
-  flex-wrap: nowrap;
   gap: 12px;
-  transition: transform 0.4s ease;
-  justify-content: flex-start;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery-row::-webkit-scrollbar {
+  display: none;
 }
 
 .gallery-img {
+  flex: 0 0 auto;
   width: 160px;
   height: 120px;
-  flex: 0 0 auto;
   object-fit: cover;
   border-radius: 12px;
+  scroll-snap-align: start;
+  box-shadow: 0 2px 10px rgba(60,60,80,0.10);
 }
+
 
 .gallery-img:hover {
   transform: scale(1.05);
