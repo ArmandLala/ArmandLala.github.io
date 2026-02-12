@@ -2,7 +2,6 @@ const row = document.querySelector(".gallery-row");
 const prev = document.getElementById("gallery-prev");
 const next = document.getElementById("gallery-next");
 
-// Calcola quanto scrollare (larghezza immagine + gap)
 function getStep() {
   const img = row.querySelector(".gallery-img");
   const style = getComputedStyle(row);
@@ -10,27 +9,19 @@ function getStep() {
   return img.offsetWidth + gap;
 }
 
-// Scroll a destra
-next.addEventListener("click", () => {
+// Funzione per scrollare con animazione
+function scrollRow(direction) {
   row.scrollBy({
-    left: getStep(),
+    left: direction * getStep(),
     behavior: "smooth"
   });
-  // Aggiorna frecce dopo animazione
-  setTimeout(updateArrows, 300);
-});
+}
 
-// Scroll a sinistra
-prev.addEventListener("click", () => {
-  row.scrollBy({
-    left: -getStep(),
-    behavior: "smooth"
-  });
-  // Aggiorna frecce dopo animazione
-  setTimeout(updateArrows, 300);
-});
+// Event listener sulle frecce
+next.addEventListener("click", () => scrollRow(1));
+prev.addEventListener("click", () => scrollRow(-1));
 
-// Mostra/Nascondi frecce in base alla posizione
+// Mostra/nascondi frecce in base alla posizione
 function updateArrows() {
   const scrollLeft = row.scrollLeft;
   const maxScroll = row.scrollWidth - row.clientWidth;
@@ -39,8 +30,9 @@ function updateArrows() {
   next.style.display = scrollLeft < maxScroll - 1 ? 'flex' : 'none';
 }
 
-// Aggiorna frecce quando scroll manuale
+// Aggiorna le frecce mentre scrolli manualmente
 row.addEventListener('scroll', updateArrows);
+window.addEventListener('resize', updateArrows);
 
-// Inizializza le frecce all'apertura della pagina
+// Inizializza le frecce
 updateArrows();
