@@ -772,15 +772,12 @@ body.project0 .glass-box p {
   display: flex;
   flex-wrap: nowrap;
   gap: 12px;
-  overflow-x: hidden; /* il JS gestisce lo scroll */
-}
-
-.gallery-row::-webkit-scrollbar {
-  display: none; /* nasconde la scrollbar */
+  overflow: hidden; /* JS gestisce lo scroll */
+  scroll-behavior: smooth;
 }
 
 .gallery-img {
-  flex: 0 0 calc(20% - 12px); /* 5 immagini visibili */
+  flex: 0 0 calc(20% - 12px); /* 5 immagini per volta */
   height: 120px;
   object-fit: cover;
   border-radius: 12px;
@@ -813,11 +810,12 @@ body.project0 .glass-box p {
   box-shadow: 0 2px 12px rgba(30,40,60,0.08);
   transition: background 0.2s, transform 0.2s;
 }
+
 .gallery-arrow:hover {
   background: rgba(255,255,255,0.4);
   transform: translateY(-50%) scale(1.1);
 }
-	
+
 #gallery-prev { left: 12px; }
 #gallery-next { right: 12px; }
 
