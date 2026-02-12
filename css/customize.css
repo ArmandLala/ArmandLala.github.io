@@ -805,3 +805,41 @@ body.project0 .glass-box p {
 #gallery-prev { left: 12px; }
 #gallery-next { right: 12px; }
 
+/* Glassbox per la gallery */
+.gallery-container {
+  width: 85vw;               /* stessa larghezza della glass-box descrittiva */
+  max-width: 950px;
+  margin: 0 auto 40px auto;  /* centrata e margine sotto */
+  padding: 36px 28px;
+  background: rgba(255,255,255,0.34); /* glass standard */
+  border-radius: 28px;
+  box-shadow: 0 3px 32px 6px rgba(30,40,60,0.11);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255,255,255,0.16);
+  text-align: center;
+  position: relative;
+}
+
+/* Titolo gallery */
+.gallery-title {
+  font-size: 2em;
+  margin-bottom: 28px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Riquadro leggermente più scuro per le frecce */
+.gallery-container .gallery-arrow {
+  background: rgba(0,0,0,0.25); /* leggermente più scuro della glassbox */
+  color: #fff;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  box-shadow: 0 3px 18px rgba(0,0,0,0.15);
+}
+
+.gallery-container .gallery-arrow:hover {
+  background: rgba(0,0,0,0.35);
+  transform: translateY(-50%) scale(1.1);
+}
