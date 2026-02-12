@@ -755,6 +755,7 @@ body.project0 .glass-box p {
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  justify-content: center;   /* <--- centra le immagini */
 }
 
 .gallery-row::-webkit-scrollbar {
@@ -802,8 +803,8 @@ body.project0 .glass-box p {
   transform: translateY(-50%) scale(1.1);
 }
 
-#gallery-prev { left: 12px; }
-#gallery-next { right: 12px; }
+#gallery-prev { left: 6px; }   /* vicino al bordo sinistro della glassbox */
+#gallery-next { right: 6px; }  /* vicino al bordo destro della glassbox */
 
 /* Glassbox per la gallery */
 .gallery-container {
