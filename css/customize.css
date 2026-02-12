@@ -774,9 +774,9 @@ body.project0 .glass-box p {
 }
 
 
-.gallery-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 22px rgba(80,110,220,0.17);
+.gallery-img {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform, box-shadow; /* forza accelerazione GPU */
 }
 
 .gallery-arrow {
