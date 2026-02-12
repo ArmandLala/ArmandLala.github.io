@@ -755,19 +755,28 @@ body.project0 .glass-box p {
   height: 60%;
   margin: 0;                   /* elimina margini interni */
   transform: none;
-________
-	/* === SLIDER MODE (solo quando JS aggiunge la classe) === */
+/*_____________________________________________________________________________________________ */
+/* Contenitore che funge da finestra per lo slider */
+.gallery-slider-wrap {
+  overflow: hidden;
+  width: 740px;      /* mostra solo 5 immagini */
+  margin: 0 auto;
+}
+
+/* Righe di immagini scorrevoli */
 .gallery-row.is-slider {
+  display: flex;
   flex-wrap: nowrap;
-  overflow-x: hidden;
+  gap: 22px;
   justify-content: flex-start;
+  scroll-behavior: smooth; /* per animazione scroll con frecce */
 }
 
 .gallery-row.is-slider img {
   flex-shrink: 0;
 }
 
-/* frecce */
+/* Frecce */
 .gallery-arrows {
   display: flex;
   justify-content: center;
@@ -783,6 +792,7 @@ ________
   color: white;
   user-select: none;
 }
+
 .gallery-arrow-btn:hover {
   color: #74d5ff;
 }
