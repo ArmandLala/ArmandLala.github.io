@@ -755,5 +755,36 @@ body.project0 .glass-box p {
   height: 60%;
   margin: 0;                   /* elimina margini interni */
   transform: none;
+________
+	/* === SLIDER MODE (solo quando JS aggiunge la classe) === */
+.gallery-row.is-slider {
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  justify-content: flex-start;
+}
+
+.gallery-row.is-slider img {
+  flex-shrink: 0;
+}
+
+/* frecce */
+.gallery-arrows {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 14px;
+}
+
+.gallery-arrow-btn {
+  background: none;
+  border: none;
+  font-size: 2.5em;
+  cursor: pointer;
+  color: white;
+  user-select: none;
+}
+.gallery-arrow-btn:hover {
+  color: #74d5ff;
+}
 
 
