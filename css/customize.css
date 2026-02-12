@@ -742,12 +742,8 @@ body.project0 .glass-box p {
   transform: none;
 }
 /*__________________________________*/
-.gallery-wrapper {
+.glass-box.gallery-wrapper {
   position: relative;
-  width: 100%;
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 24px;
   overflow: hidden;
 }
 
