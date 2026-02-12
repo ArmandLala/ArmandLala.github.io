@@ -18,10 +18,10 @@ prev.addEventListener("click", () => {
   row.scrollBy({ left: -getStep(), behavior: "smooth" });
 });
 
-// Intersection Observer
+// Intersection Observer aggiornato
 let observerOptions = {
   root: row,
-  threshold: 0.01
+  threshold: 0.95  // <- l'immagine deve essere quasi completamente visibile
 };
 
 const firstImg = imgs[0];
