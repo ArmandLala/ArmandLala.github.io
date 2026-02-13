@@ -45,16 +45,16 @@
   
   <div class="project-glass-wrapper">
   <!-- Blocco 1: COPERTINA -->
-<div class="glass-box cover-bg" style="background-image: url('/images/project00/project00.png');">
+<div class="glass-box cover-bg" style="background-image: url('/images/project00/project00_2.png');">
 
 <div class="cover-icons">
   <!-- ICONA GRASSHOPPER -->
   <a href="/doc/TESS_4.gh" download title="Scarica file Grasshopper" class="icon-btn">
-    <span class="icon-gh">GG</span>
+    <span class="icon-gh">GGB</span>
   </a>
 
   <!-- ICONA PDF -->
-  <a href="/doc/Boards_ MORPHO·DOME.pdf" target="_blank" download title="Scarica PDF" class="icon-btn">
+  <a href="/doc/Boards_ PAPER_ARCHITECTURE.pdf" target="_blank" download title="Scarica PDF" class="icon-btn">
     <svg height="20" width="20" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="2">
       <rect x="4" y="2" width="12" height="16" rx="2" fill="none"/>
       <path d="M8 6h4M8 10h4M8 14h4"/>
@@ -73,53 +73,40 @@
 
     <!-- Blocco 2: DESCRIZIONE -->
 <div class="glass-box">
-  <p>The project deals with the development of complex surfaces and tessellation to enable fast, easy, and efficient construction and eventual disassembly. Starting from the perimeter of a random area, the surface is developed through a system of anchoring and non-anchoring constraints. This is followed by the tessellation process, the module development process, and finally the fabrication process.</p>
+<p>The "PAPER ARCHITECTURE" project examines the development of complex surfaces in architecture (and beyond). Complex forms represent a significant challenge, from their conceptualization to physical realization. Ideally, a complex surface can be assimilated to any known object, with either a regular or irregular shape.</p>
+<p>Building on these concepts, our project involves "tessellating" these surfaces with patterns of varying complexity to create the components needed for their final construction. In geometry, the simplest element to manage is the point, which allows for infinite combinations. We envisioned controlling double-curved complex surfaces through the use of geometric points. Starting from primary splines (connections between points with the same number of elements), we were able to control the primitive shape of the surface and deform it at will. This strategy enables the creation of infinite configurations by varying the position of the primary points on the two main projection planes of space, according to the method of Monge in Descriptive Geometry. A "backbone" spline regulates the general shape's trajectory, akin to the structure of an annelid or a snake.</p>
+<p>Parametric management is crucial for creating and controlling the constituent pieces of the structure. Using the "Sequence" command in GeoGebra, we developed an algorithm to divide the "backbone" spline into n points, from which perpendicular lines are generated that regulate the division in one of the two main directions (V). With the same algorithm, leveraging the lines created by the primary spline points and the perpendicular lines of the backbone, we created the parametric subdivision in the U direction. The result is an "adaptive grid" entirely managed through points and splines/segments, visualized via the Monge method.</p>
+<p>For the module adaptation, the most effective solution was to generate an offset of the complex surface and develop a system to manage the opening of each truncated pyramid module and the overall offset distance. Constructing the surface and making it manipulable by the user posed several challenges. Studying these surfaces and their management in software like Rhino inspired us to use the primary splines to control their curvature and implement parametric subdivision, similar to what is used in Grasshopper. In Rhino, surfaces are generated more automatically, while in GeoGebra, although more cumbersome, the points-and-splines system offers an effective hierarchical management that integrates seamlessly with the constraints of descriptive geometry (parallelisms, intersections, projections, visualizations, dimensions, etc.).</p>
+<p>Using points as the basic element simplified the process in almost every aspect within GeoGebra Geometry. By identifying each point and its position in space, we were able to group the points of each module and, through a flipping in projective space, achieve flattening, i.e., the representation of the actual dimensions of each module’s faces. By recognizing the shared edges between the modules, we developed several configurations for the final pieces (pieces along the U or V direction, single modules, or a continuous single module, though with some limitations). The assembly is carried out through dovetail joints.</p>
+<p>This approach allows for a clean, parametric, and controllable management of the final complex surface. The main goal is to reduce material waste and costs in the realization of complex architecture, especially using alternative materials to conventional ones. In addition to optimizing costs and reducing waste, our method aims to increase accessibility to this type of construction, which is typically too expensive and slow.</p>
+<p>At an urban scale, the "PAPER ARCHITECTURE" method adapts to urban voids, creating unique structures such as organic green roofs, pavilions, or urban furniture. In summary, the project combines efficiency and sustainability with accessibility and flexibility, optimizing the various scales of architecture.</p>
 
-  <p>Starting from a closed curve (random perimeter) and three points on which ellipses are generated—whose radii and inclinations in 3D space are interactive—we create a flat surface that is then transformed into a triangular mesh. From this triangular mesh, with the help of Kangaroo, various constraints and stresses are applied in order to deform the mesh “net” in 3D space. In our case, the points corresponding to the long sides of the outer perimeter and those of the ellipses are anchored, while the transitional areas are left free.</p>
-
-  <p>From the resulting 3D triangular mesh, a new triangular remesh is generated to avoid over-stretched triangles after the Kangaroo simulation. We then proceed to the creation of an NGon mesh, with the objective of preserving the original volumetric development. The same objective is pursued during the planarization of each individual module, allowing for a limited degree of elasticity.</p>
-
-  <p>A C# script is used to check the sum of the internal angles as a further test of planarity (based on the number of triangles composing each NGon module, the script calculates the expected internal angle and detects any anomalies). A curvature analysis is then performed on the mesh before and after planarization, confirming an acceptable geometric configuration for our case.</p>
-
-  <p>The development of the module and the study of joints stem from the following question: can we create both a “structural” system and joints between elements, in order to obtain a skeleton capable of holding the entire structure together? After extensive research and testing, the chosen strategy was to generate fins for each module along its normal direction, taking into account also the adjacent modules. Each flap includes a curved appendix that increases the strength of the joint. The entire system is connected using 2.5 mm zip ties.</p>
-
-  <p>A C# script was created within Grasshopper to generate, through numerical parameters and the polylines of the NGon modules, the fins and the necessary holes following the logic “for each side of each module, and then for all modules.” Additional precautions were implemented, such as reducing the length of the flaps to avoid unwanted intersections. The script generates flaps and connectors on planes coincident with the average plane of each module. At the end of the process, the script groups the elements belonging to each module and distributes them on the global XY plane according to a specified spacing value.</p>
-
-  <p>The development of each module follows the sequence shown in the side image: after folding all the flaps, a polygonal module is obtained. Once the Grasshopper workflow was completed, the cut files for laser cutting were prepared. The “padlock” elements—strips used to close the openings of the holes in the entire model—were also generated.</p>
-
-  <p>All components are connected to two basic modules that provide support for the overall structure, again using zip ties as in the rest of the model. These two base elements fit together and include additional safety hooks, also secured with zip ties.</p>
-
-  <p>In conclusion, the space we aim to create is not a standard space with a predefined form. Our intention is not to define a fixed set of rules, but rather to develop a method that can be applied to different contexts and that possesses the flexibility to adapt to various scenarios, particularly for the coverage of large spans.</p>
 </div>
 
 <!-- Blocco 3: GALLERIA -->
-<div class="glass-box">
-  <h3>IMAGE GALLERY</h3>
-  <div class="gallery-row">
-    <!-- Cartella data -->
-    <img src="/images/project0/data/axo2.png" alt="axo2" class="gallery-img">
-    <img src="/images/project0/data/axo1.png" alt="axo1" class="gallery-img">
-    <img src="/images/project0/data/sez1.png" alt="sez1" class="gallery-img">
-    <img src="/images/project0/data/ppt.png" alt="ppt" class="gallery-img">
-    <img src="/images/project0/data/ppt2.png" alt="ppt2" class="gallery-img">
-    <img src="/images/project0/data/modul0.png" alt="modul0" class="gallery-img">
-    <img src="/images/project0/data/modul1.png" alt="modul1" class="gallery-img">
+<div class="glass-box gallery-container">
+  <h2 class="gallery-title">IMAGE GALLERY</h2>
+  <div class="gallery-wrapper">
+    <button id="gallery-prev" class="gallery-arrow">‹</button>
 
-    <!-- Cartella mod -->
-    <img src="/images/project0/mod/mod7.JPEG" alt="mod7" class="gallery-img">
-    <img src="/images/project0/mod/mod8.JPEG" alt="mod8" class="gallery-img">
-    <img src="/images/project0/mod/mod6.JPEG" alt="mod6" class="gallery-img">
-    <img src="/images/project0/mod/mod4.JPEG" alt="mod4" class="gallery-img">
-    <img src="/images/project0/mod/mod1.JPEG" alt="mod1" class="gallery-img">
+    <div class="gallery-row">
+      <img src="/images/project00/1.png" alt="1" class="gallery-img">
+      <img src="/images/project00/2.png" alt="2" class="gallery-img">
+      <img src="/images/project00/3.png" alt="3" class="gallery-img">
+      <img src="/images/project00/4.png" alt="4" class="gallery-img">
+      <img src="/images/project00/5.png" alt="5" class="gallery-img">
+      <img src="/images/project00/6.png" alt="6" class="gallery-img">
+      <img src="/images/project00/7.png" alt="7" class="gallery-img">
+      <img src="/images/project00/8.png" alt="8" class="gallery-img">
+      <img src="/images/project00/9.png" alt="9" class="gallery-img">
+      <img src="/images/project00/10.png" alt="10" class="gallery-img">
+      <img src="/images/project00/11.png" alt="11" class="gallery-img">
+    </div>
 
-    <!-- Cartella render -->
-    <img src="/images/project0/render/1.jpg" alt="render1" class="gallery-img">
-    <img src="/images/project0/render/4.jpg" alt="render4" class="gallery-img">
-    <img src="/images/project0/render/3.jpg" alt="render3" class="gallery-img">
-    <img src="/images/project0/render/2.jpg" alt="render2" class="gallery-img">
-    <img src="/images/project0/render/6.jpg" alt="render6" class="gallery-img">
+    <button id="gallery-next" class="gallery-arrow">›</button>
   </div>
 </div>
+
 
     <div class="row one-bottom center">
     <p>©ARMAND LALA 2026</p>
@@ -190,7 +177,7 @@ document.addEventListener('keydown', function(e) {
   }
 });
 </script>
-
+<script src="/js/gallery.js"></script>
 </body>
 </html>
 
