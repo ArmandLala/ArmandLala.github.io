@@ -79,7 +79,7 @@ img.full-height {
 
 .project-card:hover h5,
 .project-card:focus-within h5 {
-  color: #3366ff; /* Cambia qui per altro colore */
+  color: #fff; /* rimane bianco */
 }
 
 body {
