@@ -65,22 +65,50 @@
     </div>
     <!-- Blocco 2: DESCRIZIONE -->
     <div class="glass-box">
-      <p>The program uses p5.js to create an interactive and dynamic composition of randomly generated shapes (circles, squares, and triangles) on the screen. The background is set to white only once inside the setup() function (background(255);), so all new shapes are drawn on top of previous ones and accumulate over time, creating an abstract visual effect.
-In the setup() block, the code initializes the canvas to fill the browser window (createCanvas(windowWidth, windowHeight);) and ensures that rectangles and ellipses are drawn from their center (rectMode(CENTER); and ellipseMode(CENTER);). The default stroke is removed with noStroke(); so shapes do not have a border by default.
-The core drawing logic happens in the draw() function, which is called repeatedly by p5.js (about 60 times per second). Each time draw() executes, the code first chooses a random position on the canvas by generating values for x and y using random(width) and random(height). It then determines a random size for the next shape with let size = random(30, 120);, so each shape appears in a variety of dimensions.
-Next, the program sets a random fill color with some transparency: fill(random(255), random(255), random(255), random(70, 170));. The four arguments correspond to red, green, blue, and alpha (opacity), with alpha ensuring that overlapping shapes create interesting blends.
-The type of shape to draw is decided randomly as well: let shapeType = floor(random(3));. This produces either 0 (ellipse), 1 (rectangle), or 2 (triangle).
-If shapeType === 0, the code draws a circle at the chosen position and size with ellipse(x, y, size, size);.
+<p class="project-detail">
+The program uses <em>p5.js</em> to create an interactive and dynamic composition of randomly generated shapes (circles, squares, and triangles) on the screen.
+The background is set to white only once inside the <em>setup()</em> function (<em>background(255);</em>), so all new shapes are drawn on top of previous ones and accumulate over time, creating an abstract visual effect.
+</p>
 
+<p class="project-detail">
+In the <em>setup()</em> block, the code initializes the canvas to fill the browser window (<em>createCanvas(windowWidth, windowHeight);</em>) and ensures that rectangles and ellipses are drawn from their center (<em>rectMode(CENTER);</em> and <em>ellipseMode(CENTER);</em>).
+The default stroke is removed with <em>noStroke();</em>, so shapes do not have a border by default.
+</p>
 
-If shapeType === 1, it draws a square using rect(x, y, size, size);, centered at (x, y).
+<p class="project-detail">
+The core drawing logic happens in the <em>draw()</em> function, which is called repeatedly by <em>p5.js</em> (about 60 times per second).
+Each time <em>draw()</em> executes, the code first chooses a random position on the canvas by generating values for <em>x</em> and <em>y</em> using <em>random(width)</em> and <em>random(height)</em>.
+It then determines a random size for the next shape with <em>let size = random(30, 120);</em>, so each shape appears in a variety of dimensions.
+</p>
 
+<p class="project-detail">
+Next, the program sets a random fill color with some transparency: <em>fill(random(255), random(255), random(255), random(70, 170));</em>.
+The four arguments correspond to red, green, blue, and alpha (opacity), with alpha ensuring that overlapping shapes create interesting blends.
+</p>
 
-If shapeType === 2, the code calculates the height for an equilateral triangle and draws the triangle using the triangle() function. The coordinates are calculated so that the triangle is centered at (x, y).
+<p class="project-detail">
+The type of shape to draw is decided randomly as well: <em>let shapeType = floor(random(3));</em>.
+This produces either 0 (<em>ellipse</em>), 1 (<em>rectangle</em>), or 2 (<em>triangle</em>).
+</p>
 
+<p class="project-detail">
+If <em>shapeType === 0</em>, the code draws a circle at the chosen position and size with <em>ellipse(x, y, size, size);</em>.
+</p>
 
-Because the background is only set in setup() and not redrawn in draw(), shapes accumulate and overlap, resulting in a lively, evolving, and colorful abstract image. Transparency and random choices for position, size, and color make every composition unique and unpredictable, giving the sketch a playful and artistic character.
-         </p>
+<p class="project-detail">
+If <em>shapeType === 1</em>, it draws a square using <em>rect(x, y, size, size);</em>, centered at (<em>x</em>, <em>y</em>).
+</p>
+
+<p class="project-detail">
+If <em>shapeType === 2</em>, the code calculates the height for an equilateral triangle and draws the triangle using the <em>triangle()</em> function.
+The coordinates are calculated so that the triangle is centered at (<em>x</em>, <em>y</em>).
+</p>
+
+<p class="project-detail">
+Because the background is only set in <em>setup()</em> and not redrawn in <em>draw()</em>, shapes accumulate and overlap, resulting in a lively, evolving, and colorful abstract image.
+Transparency and random choices for position, size, and color make every composition unique and unpredictable, giving the sketch a playful and artistic character.
+</p>
+
     </div>
 <!-- Blocco 3: GALLERIA -->
 <div class="glass-box gallery-container">
@@ -106,7 +134,7 @@ Because the background is only set in setup() and not redrawn in draw(), shapes 
 
 
     <div class="row one-bottom center">
-    <p>©ARMAND LALA 2025</p>
+    <p>©ARMAND LALA 2026</p>
   </div>
 </div>
   
