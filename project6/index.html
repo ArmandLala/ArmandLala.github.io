@@ -72,15 +72,15 @@ The HYPNO SPIRAL code generates an animated spiral of circles, inspired by the F
 </p>
 
 <p>
-At the top, two global variables are defined: <code>t</code> (a global time variable for animation) and <code>rot</code> (which controls the rotation of the entire spiral). In <code>setup()</code>, the canvas is set to the full window with a black background, and shapes are drawn without fill, only outlines.
+At the top, two global variables are defined: <em>t</em> (a global time variable for animation) and <em>rot</em> (which controls the rotation of the entire spiral). In <em>setup()</em>, the canvas is set to the full window with a black background, and shapes are drawn without fill, only outlines.
 </p>
 
 <p>
-The main animation happens in <code>draw()</code>. Each frame, a semi-transparent black rectangle is drawn (<code>fill(10, 60); rect(...)</code>) to create a fading trail effect. The origin is moved to the center of the canvas with <code>translate()</code>. Then, the code uses <code>push()</code> and <code>pop()</code> to rotate the spiral by <code>rot</code> radians (<code>rotate(rot); drawSpiral();</code>). The variables <code>t</code> and <code>rot</code> are increased each frame, controlling both the pulsation and the spinning.
+The main animation happens in <em>draw()</em>. Each frame, a semi-transparent black rectangle is drawn (<em>fill(10, 60); rect(...)</em>) to create a fading trail effect. The origin is moved to the center of the canvas with <em>translate()</em>. Then, the code uses <em>push()</em> and <em>pop()</em> to rotate the spiral by <em>rot</em> radians (<em>rotate(rot); drawSpiral();</em>). The variables <em>t</em> and <em>rot</em> are increased each frame, controlling both the pulsation and the spinning.
 </p>
 
 <p>
-The function <code>drawSpiral()</code> contains the main loop, where for each point (<code>n</code>) up to <code>maxN</code>, the code computes the angle (using the golden angle in radians and a slight sinusoidal oscillation) and a radius that grows like <code>sqrt(n)</code>. These polar coordinates are converted to Cartesian (<code>x, y</code>), and each circle is drawn with a white outline whose thickness and diameter also oscillate in time, becoming smaller towards the outside.
+The function <em>drawSpiral()</em> contains the main loop, where for each point <em>n</em> up to <em>maxN</em>, the code computes the angle (using the golden angle in radians and a slight sinusoidal oscillation) and a radius that grows like <em>sqrt(n)</em>. These polar coordinates are converted to Cartesian (<em>x, y</em>), and each circle is drawn with a white outline whose thickness and diameter also oscillate in time, becoming smaller towards the outside.
 </p>
 
 <p>
@@ -88,17 +88,14 @@ The result is a clean, dynamic spiral made up of gently pulsing white circles, s
 </p>
 
 <p>
-The SUNFLOWER sketch also uses polar coordinates and the golden angle to create a spiral, as seen in the previous example. Here, the global variable <code>n</code> counts the number of steps, and each frame in <code>draw()</code> adds one circle at a position computed from:
-<code>angle = n * radians(137.5)</code> and <code>radius = 6 * sqrt(n)</code>.
+The SUNFLOWER sketch also uses polar coordinates and the golden angle to create a spiral, as seen in the previous example. Here, the global variable <em>n</em> counts the number of steps, and each frame in <em>draw()</em> adds one circle at a position computed from
+<em>angle = n * radians(137.5)</em> and <em>radius = 6 * sqrt(n)</em>. The (<em>x, y</em>) coordinates center each circle, and <em>fill(40 + n % 215, 160, 200, 180)</em> assigns a unique color to each.
 </p>
 
 <p>
-The (<code>x, y</code>) coordinates center each circle, and <code>fill(40 + n % 215, 160, 200, 180)</code> assigns a unique color to each. Unlike the previous sketch, this one does not animate or rotate the spiral: every circle stays fixed, and <code>noLoop()</code> halts the drawing when the spiral reaches the canvas edge.
+Unlike the previous sketch, this one does not animate or rotate the spiral: every circle stays fixed, and <em>noLoop()</em> halts the drawing when the spiral reaches the canvas edge. In summary, both codes use the same math, but this version builds a static, step-by-step sunflower spiral with changing colors and no motion.
 </p>
 
-<p>
-In summary, both codes use the same math, but this version builds a static, step-by-step sunflower spiral with changing colors and no motion.
-</p>
 
     </div>
 <!-- Blocco 3: GALLERIA -->
