@@ -63,42 +63,62 @@
   <img src="/images/orange.png" alt="Blue Project" class="cover-img">
 
     </div>
-    <!-- Blocco 2: DESCRIZIONE -->
-    <div class="glass-box">
-      <p>
-        This project is a programmatic interpretation of Sol LeWitt’s “Location of a Circle”, realized through p5.js. LeWitt’s original instructions, notoriously intricate and recursive, demand the construction of a circle using only geometric points derived from the structure of a square. As stated by LeWitt:
-A circle whose radius is equal to half the distance between two points, the first point is found where two lines would cross if the first line were drawn from a point halfway between a point halfway between the center of the square and the upper right corner and the midpoint of the topside to a point halfway between a point halfway between the center of the square and the midpoint of the right side and a point halfway between the midpoint of the right side and the lower right corner, the second line of the first set is drawn from a point halfway between a point halfway between the center of the square and a point halfway between the midpoint and the left side and the upper left corner and the midpoint of the left side to a point halfway between a point halfway between the center of the square and the upper right corner and a point halfway between the midpoint of the right side and the upper right corner; the second point is found where two lines would cross if the first line is drawn from a point halfway between a point halfway between the center of the square and the midpoint of the bottom side and a point halfway between the center of the square and the lower left corner to a point halfway between the end of the first line of the first set and the end of the second line of the first set, the second line of the second set is drawn from a point halfway between the point where the first two lines have crossed and a point halfway between the start of the first line of the first set and a point halfway between the midpoint of the left side and the upper left corner to a point halfway between the end of the first line of the second set and the midpoint of the bottom side; all whose center is located equidistant to three points, the first of which is located at the center of the square, the second point is located at a point halfway between a point halfway between the center of the square and the upper left corner, the third point is located halfway between the start of the first line of the first set and the end of the first line of the second set.
-In my code, I first define the square and all its key vertices and midpoints within the draw() function. To translate LeWitt’s layered instructions, I repeatedly use a custom midpoint(p1, p2) function, which calculates the midpoint between two p5.Vector points. The construction then proceeds by creating further midpoints of midpoints, reflecting LeWitt’s recursive “halfway between a point halfway…” structure.
-Crucially, to find the specific points called for by the instructions, I make use of the function lineIntersection(p1, p2, p3, p4), which computes the intersection of two lines defined by pairs of points. This is how the two “special points” of the construction are found:
- the first at the intersection of the “first set” of lines, the second at the intersection of the “second set,” exactly as described in the original text.
-To determine the center of the final circle, I use the function circumcenter(A, B, C). This calculates the circumcenter of a triangle whose vertices are:
-the center of the square,
+<!-- Blocco 2: DESCRIZIONE -->
+<div class="glass-box">
+  <p class="project-detail">
+    This project is a programmatic interpretation of Sol LeWitt’s “Location of a Circle”, realized through p5.js. LeWitt’s original instructions, notoriously intricate and recursive, demand the construction of a circle using only geometric points derived from the structure of a square.
+  </p>
 
+  <p class="project-detail">
+    As stated by LeWitt: a circle whose radius is equal to half the distance between two points, the first point is found where two lines would cross if the first line were drawn from a point halfway between a point halfway between the center of the square and the upper right corner and the midpoint of the topside to a point halfway between a point halfway between the center of the square and the midpoint of the right side and a point halfway between the midpoint of the right side and the lower right corner, the second line of the first set is drawn from a point halfway between a point halfway between the center of the square and a point halfway between the midpoint and the left side and the upper left corner and the midpoint of the left side to a point halfway between a point halfway between the center of the square and the upper right corner and a point halfway between the midpoint of the right side and the upper right corner; the second point is found where two lines would cross if the first line is drawn from a point halfway between a point halfway between the center of the square and the midpoint of the bottom side and a point halfway between the center of the square and the lower left corner to a point halfway between the end of the first line of the first set and the end of the second line of the first set, the second line of the second set is drawn from a point halfway between the point where the first two lines have crossed and a point halfway between the start of the first line of the first set and a point halfway between the midpoint of the left side and the upper left corner to a point halfway between the end of the first line of the second set and the midpoint of the bottom side; all whose center is located equidistant to three points, the first of which is located at the center of the square, the second point is located at a point halfway between a point halfway between the center of the square and the upper left corner, the third point is located halfway between the start of the first line of the first set and the end of the first line of the second set.
+  </p>
 
-a midpoint between the center and the upper left corner,
+  <p class="project-detail">
+    In my code, I first define the square and all its key vertices and midpoints within the <em>draw()</em> function. To translate LeWitt’s layered instructions, I repeatedly use a custom <em>midpoint(p1, p2)</em> function, which calculates the midpoint between two <em>p5.Vector</em> points. The construction then proceeds by creating further midpoints of midpoints, reflecting LeWitt’s recursive “halfway between a point halfway…” structure.
+  </p>
 
+  <p class="project-detail">
+    Crucially, to find the specific points called for by the instructions, I make use of the function <em>lineIntersection(p1, p2, p3, p4)</em>, which computes the intersection of two lines defined by pairs of points. This is how the two “special points” of the construction are found: the first at the intersection of the “first set” of lines, the second at the intersection of the “second set,” exactly as described in the original text.
+  </p>
 
-and a further midpoint constructed between lines—matching LeWitt’s phrasing, “the center is located equidistant to three points…”
-All the geometric points and construction lines are visualized step-by-step, and a further function, drawPoint(pt, sz, col), is used to render each relevant point as a small circle on the canvas.
-A notable addition in this implementation is the interactivity: the point “MB,” representing the midpoint on the bottom edge, can be moved by the user along the square’s base. While LeWitt does not prescribe this, I believe it embraces his spirit of openness—leaving room for variation and the interpreter’s initiative.
-Overall, the code balances mathematical rigor and creative freedom, staying as faithful as possible to LeWitt’s detailed instructions, while acknowledging the ambiguities and liberties his conceptual art always allowed. The translation of the written score into code makes both the logic and the inherent interpretative space of LeWitt’s process visible and experiential.
- </p>
+  <p class="project-detail">
+    To determine the center of the final circle, I use the function <em>circumcenter(A, B, C)</em>. This calculates the circumcenter of a triangle whose vertices are the center of the square, a midpoint between the center and the upper left corner, and a further midpoint constructed between lines—matching LeWitt’s phrasing, “the center is located equidistant to three points…”
+  </p>
+
+  <p class="project-detail">
+    All the geometric points and construction lines are visualized step-by-step, and a further function, <em>drawPoint(pt, sz, col)</em>, is used to render each relevant point as a small circle on the canvas.
+  </p>
+
+  <p class="project-detail">
+    A notable addition in this implementation is the interactivity: the point “MB,” representing the midpoint on the bottom edge, can be moved by the user along the square’s base. While LeWitt does not prescribe this, I believe it embraces his spirit of openness—leaving room for variation and the interpreter’s initiative.
+  </p>
+
+  <p class="project-detail">
+    Overall, the code balances mathematical rigor and creative freedom, staying as faithful as possible to LeWitt’s detailed instructions, while acknowledging the ambiguities and liberties his conceptual art always allowed. The translation of the written score into code makes both the logic and the inherent interpretative space of LeWitt’s process visible and experiential.
+  </p>
+</div>
+
+<!-- Blocco 3: GALLERIA SCORREVOLE -->
+<div class="glass-box gallery-container">
+  <h2 class="gallery-title">IMAGE GALLERY</h2>
+
+  <div class="gallery-wrapper">
+    <button id="gallery-prev" class="gallery-arrow">‹</button>
+
+    <div class="gallery-row">
+      <img src="/images/project_8/1.png" alt="img1" class="gallery-img">
+      <img src="/images/project_8/2.png" alt="img2" class="gallery-img">
+      <img src="/images/project_8/3.png" alt="img3" class="gallery-img">
+      <img src="/images/project_8/4.gif" alt="img4" class="gallery-img">
+      <!-- altre immagini se vuoi -->
     </div>
-    <!-- Blocco 3: GALLERIA -->
-    <div class="glass-box">
-      <h3>IMAGE GALLERY</h3>
-      <div class="gallery-row">
-        <img src="/images/project_8/1.png" alt="img1" class="gallery-img">
-        <img src="/images/project_8/2.png" alt="img2" class="gallery-img">
-        <img src="/images/project_8/3.png" alt="img3" class="gallery-img">
-        <img src="/images/project_8/4.gif" alt="img4" class="gallery-img">
-        <!-- altre immagini se vuoi -->
-      </div>
-    </div>
+
+    <button id="gallery-next" class="gallery-arrow">›</button>
   </div>
+</div>
 
     <div class="row one-bottom center">
-    <p>©ARMAND LALA 2025</p>
+    <p>©ARMAND LALA 2026</p>
   </div>
 </div>
   
@@ -166,7 +186,6 @@ document.addEventListener('keydown', function(e) {
   }
 });
 </script>
-
-
+<script src="/js/gallery.js"></script>
 </body>
 </html>
