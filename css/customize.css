@@ -853,3 +853,11 @@ body.project0 .glass-box p {
 #info.glass-box {
   margin-top: 90px;  /* sposta la box sotto la navbar */
 }
+
+.project-description.concise {
+  font-size: 1.35em;    /* un po’ più grande della descrizione normale */
+  font-weight: 600;     /* leggermente più marcato */
+  line-height: 1.55;
+  margin-bottom: 1.2em;
+}
+
