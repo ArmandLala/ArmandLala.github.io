@@ -46,7 +46,6 @@
 <div class="project-glass-wrapper">
   <!-- Blocco 1: COPERTINA -->
   <div class="glass-box cover-bg" style="background-image: url('/images/project_6/3.gif');">
-    
     <div class="cover-head">
       <h1 class="cover-title">HYPNO SPIRAL</h1>
       <div class="cover-icons">
@@ -61,72 +60,65 @@
         </a>
       </div>
     </div>
-
   </div>
-</div>
 
-    <!-- Blocco 2: DESCRIZIONE -->
-    <div class="glass-box">
-<!-- Descrizione dettagliata HYPNO SPIRAL e SUNFLOWER -->
-<p class="project-detail">
-The HYPNO SPIRAL code generates an animated spiral of circles, inspired by the Fibonacci pattern, using polar coordinates and smooth rotation for a hypnotic effect.
-</p>
+  <!-- Blocco 2: DESCRIZIONE -->
+  <div class="glass-box">
+    <p class="project-detail">
+      The HYPNO SPIRAL code generates an animated spiral of circles, inspired by the Fibonacci pattern, using polar coordinates and smooth rotation for a hypnotic effect.
+    </p>
 
-<p class="project-detail">
-At the top, two global variables are defined: <em>t</em> (a global time variable for animation) and <em>rot</em> (which controls the rotation of the entire spiral). In <em>setup()</em>, the canvas is set to the full window with a black background, and shapes are drawn without fill, only outlines.
-</p>
+    <p class="project-detail">
+      At the top, two global variables are defined: <em>t</em> (a global time variable for animation) and <em>rot</em> (which controls the rotation of the entire spiral). In <em>setup()</em>, the canvas is set to the full window with a black background, and shapes are drawn without fill, only outlines.
+    </p>
 
-<p class="project-detail">
-The main animation happens in <em>draw()</em>. Each frame, a semi-transparent black rectangle is drawn (<em>fill(10, 60); rect(...)</em>) to create a fading trail effect. The origin is moved to the center of the canvas with <em>translate()</em>. Then, the code uses <em>push()</em> and <em>pop()</em> to rotate the spiral by <em>rot</em> radians (<em>rotate(rot); drawSpiral();</em>). The variables <em>t</em> and <em>rot</em> are increased each frame, controlling both the pulsation and the spinning.
-</p>
+    <p class="project-detail">
+      The main animation happens in <em>draw()</em>. Each frame, a semi-transparent black rectangle is drawn (<em>fill(10, 60); rect(...)</em>) to create a fading trail effect. The origin is moved to the center of the canvas with <em>translate()</em>. Then, the code uses <em>push()</em> and <em>pop()</em> to rotate the spiral by <em>rot</em> radians (<em>rotate(rot); drawSpiral();</em>). The variables <em>t</em> and <em>rot</em> are increased each frame, controlling both the pulsation and the spinning.
+    </p>
 
-<p class="project-detail">
-The function <em>drawSpiral()</em> contains the main loop, where for each point <em>n</em> up to <em>maxN</em>, the code computes the angle (using the golden angle in radians and a slight sinusoidal oscillation) and a radius that grows like <em>sqrt(n)</em>. These polar coordinates are converted to Cartesian (<em>x, y</em>), and each circle is drawn with a white outline whose thickness and diameter also oscillate in time, becoming smaller towards the outside.
-</p>
+    <p class="project-detail">
+      The function <em>drawSpiral()</em> contains the main loop, where for each point <em>n</em> up to <em>maxN</em>, the code computes the angle (using the golden angle in radians and a slight sinusoidal oscillation) and a radius that grows like <em>sqrt(n)</em>. These polar coordinates are converted to Cartesian (<em>x, y</em>), and each circle is drawn with a white outline whose thickness and diameter also oscillate in time, becoming smaller towards the outside.
+    </p>
 
-<p class="project-detail">
-The result is a clean, dynamic spiral made up of gently pulsing white circles, slowly rotating against a black background, for an elegant “hypno-spiral” visual effect.
-</p>
+    <p class="project-detail">
+      The result is a clean, dynamic spiral made up of gently pulsing white circles, slowly rotating against a black background, for an elegant “hypno-spiral” visual effect.
+    </p>
 
-<p class="project-detail">
-The SUNFLOWER sketch also uses polar coordinates and the golden angle to create a spiral, as seen in the previous example. Here, the global variable <em>n</em> counts the number of steps, and each frame in <em>draw()</em> adds one circle at a position computed from
-<em>angle = n * radians(137.5)</em> and <em>radius = 6 * sqrt(n)</em>. The (<em>x, y</em>) coordinates center each circle, and <em>fill(40 + n % 215, 160, 200, 180)</em> assigns a unique color to each.
-</p>
+    <p class="project-detail">
+      The SUNFLOWER sketch also uses polar coordinates and the golden angle to create a spiral, as seen in the previous example. Here, the global variable <em>n</em> counts the number of steps, and each frame in <em>draw()</em> adds one circle at a position computed from
+      <em>angle = n * radians(137.5)</em> and <em>radius = 6 * sqrt(n)</em>. The (<em>x, y</em>) coordinates center each circle, and <em>fill(40 + n % 215, 160, 200, 180)</em> assigns a unique color to each.
+    </p>
 
-<p class="project-detail">
-Unlike the previous sketch, this one does not animate or rotate the spiral: every circle stays fixed, and <em>noLoop()</em> halts the drawing when the spiral reaches the canvas edge. In summary, both codes use the same math, but this version builds a static, step-by-step sunflower spiral with changing colors and no motion.
-</p>
-
-
-    </div>
-<!-- Blocco 3: GALLERIA -->
-<div class="glass-box gallery-container">
-  <h2 class="gallery-title">IMAGE GALLERY</h2>
-
-  <div class="gallery-wrapper">
-    <button id="gallery-prev" class="gallery-arrow">‹</button>
-
-    <div class="gallery-row">
-      <img src="/images/project_6/1.png" alt="img1" class="gallery-img">
-      <img src="/images/project_6/2.png" alt="img2" class="gallery-img">
-      <img src="/images/project_6/3.gif" alt="img3" class="gallery-img">
-    </div>
-
-    <button id="gallery-next" class="gallery-arrow">›</button>
+    <p class="project-detail">
+      Unlike the previous sketch, this one does not animate or rotate the spiral: every circle stays fixed, and <em>noLoop()</em> halts the drawing when the spiral reaches the canvas edge. In summary, both codes use the same math, but this version builds a static, step-by-step sunflower spiral with changing colors and no motion.
+    </p>
   </div>
-</div>
 
-    <div class="row one-bottom center">
+  <!-- Blocco 3: GALLERIA -->
+  <div class="glass-box gallery-container">
+    <h2 class="gallery-title">IMAGE GALLERY</h2>
+    <div class="gallery-wrapper">
+      <button id="gallery-prev" class="gallery-arrow">‹</button>
+      <div class="gallery-row">
+        <img src="/images/project_6/1.png" alt="img1" class="gallery-img">
+        <img src="/images/project_6/2.png" alt="img2" class="gallery-img">
+        <img src="/images/project_6/3.gif" alt="img3" class="gallery-img">
+      </div>
+      <button id="gallery-next" class="gallery-arrow">›</button>
+    </div>
+  </div>
+
+  <div class="row one-bottom center">
     <p>©ARMAND LALA 2026</p>
   </div>
 </div>
-  
+
 <script src="../js/p5.js"></script>
 <script src="../js/p5.sound.min.js"></script>
 <script src="../js/mold.js"></script>
 <script src="../js/sketch.js"></script>
 
-  <!-- POPUP OVERLAY -->
+<!-- POPUP OVERLAY -->
 <div id="img-popup" style="display:none;position:fixed;z-index:10000;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.77);justify-content:center;align-items:center;">
   <span id="popup-prev" class="popup-arrow" aria-label="Precedente">&lt;</span>
   <img id="img-popup-big" src="" style="max-width:90vw;max-height:85vh;border-radius:14px;box-shadow:0 6px 32px rgba(60,60,80,0.16);border:3px solid #fff;">
@@ -167,7 +159,6 @@ document.getElementById('popup-next').onclick = function(e) {
   showPopup((currentIndex + 1) % images.length);
 };
 
-// Tastiera: ← (37), → (39), ESC (27)
 document.addEventListener('keydown', function(e) {
   if(document.getElementById('img-popup').style.display === 'flex') {
     if(e.key === 'ArrowLeft') {
@@ -188,4 +179,3 @@ document.addEventListener('keydown', function(e) {
 <script src="/js/gallery.js"></script>
 </body>
 </html>
-
