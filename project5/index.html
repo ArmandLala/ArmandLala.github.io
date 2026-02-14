@@ -105,20 +105,25 @@ environment, generate complex, organic-looking patterns. It reflects how individ
 collectively shape the dynamics of a city over time, just like mycelium growing through a
 landscape.</p>
     </div>
-    <!-- Blocco 3: GALLERIA -->
-    <div class="glass-box">
-      <h3>IMAGE GALLERY</h3>
-      <div class="gallery-row">
-        <img src="/images/project_5/1.png" alt="img1" class="gallery-img">
-        <img src="/images/project_5/2.png" alt="img2" class="gallery-img">
-        <img src="/images/project_5/3.png" alt="img3" class="gallery-img">
-        <img src="/images/project_5/4.png" alt="img4" class="gallery-img">
-        <img src="/images/project_5/5.png" alt="img5" class="gallery-img">
-        <img src="/images/project_5/6.png" alt="img6" class="gallery-img">
-        <!-- altre immagini se vuoi -->
-      </div>
+ <!-- Blocco 3: GALLERIA -->
+<div class="glass-box gallery-container">
+  <h2 class="gallery-title">IMAGE GALLERY</h2>
+
+  <div class="gallery-wrapper">
+    <button id="gallery-prev" class="gallery-arrow">‹</button>
+
+    <div class="gallery-row">
+      <img src="/images/project_5/1.png" alt="img1" class="gallery-img">
+      <img src="/images/project_5/2.png" alt="img2" class="gallery-img">
+      <img src="/images/project_5/3.png" alt="img3" class="gallery-img">
+      <img src="/images/project_5/4.png" alt="img4" class="gallery-img">
+      <img src="/images/project_5/5.png" alt="img5" class="gallery-img">
+      <img src="/images/project_5/6.png" alt="img6" class="gallery-img">
     </div>
+
+    <button id="gallery-next" class="gallery-arrow">›</button>
   </div>
+</div>
 
     <div class="row one-bottom center">
     <p>©ARMAND LALA 2025</p>
@@ -189,7 +194,6 @@ document.addEventListener('keydown', function(e) {
   }
 });
 </script>
-
-
+<script src="/js/gallery.js"></script>
 </body>
 </html>
