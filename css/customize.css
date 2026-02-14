@@ -135,6 +135,11 @@ body {
   margin-bottom: 8px;
 }
 
+#student_info p {
+  font-size: 1.25em;   /* prova 1.2em – 1.3em – 1.4em */
+  line-height: 1.5;
+}
+
 #logo-al {
   margin-bottom: 8px;
   margin-top: 8px;
