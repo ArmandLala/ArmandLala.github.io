@@ -65,14 +65,35 @@
     </div>
     <!-- Blocco 2: DESCRIZIONE -->
     <div class="glass-box">
-      <p>
-        This project creates a richly subdivided grid, where each subcell is filled with a color from a carefully chosen blue and gold palette, and contains either a diamond or an ellipse shape whose color is the exact inverse of the background. The key data structure, defined at the start (let gridData;), is a deeply nested array that holds the x, y, width, height, and color index for every subcell, as constructed by the buildGrid() function (lines 37–67).
-The grid is initialized in the setup() function (lines 22–28), where the canvas size is set to the window dimensions and buildGrid() is called to generate the multi-level array. Each main grid cell (rows and columns set by let rows and let cols) is itself subdivided into a random number of subcells both vertically and horizontally (minSub and maxSub). For each subcell, its position, size, and a random color from the paletteRGB array are stored.
-Rendering is handled by drawGrid() (lines 70–112), which loops through every subcell in the grid. For each, it first fills the background rectangle with its palette color. Then, based on the global boolean showAllEllipse (line 20), either a diamond (created by connecting the midpoints of each side using beginShape()/endShape()) or an ellipse (drawn with ellipse(cx, cy, w - 2, h - 2), so it is almost perfectly inscribed in the cell) is drawn at the center. The shape uses the inverse of the background color to create a visually strong contrast.
-Interactivity is added with the mousePressed() function (lines 115–148). A left mouse click on any subcell changes its color to a different palette value, by updating the fifth element of that subcell’s data array. A right click anywhere toggles showAllEllipse globally, causing all diamonds to instantly switch to ellipses (and vice versa). To prevent the default context menu on right click, document.oncontextmenu = () => false; is used.
-Overall, this sketch combines randomization, interaction, and color theory to produce a modernist, modular composition reminiscent of contemporary graphic design, with every detail (color, shape, and behavior) controlled by simple, readable code and explained through comments in each block.
+<p class="project-detail">
+This project creates a richly subdivided grid, where each subcell is filled with a color from a carefully chosen blue and gold palette, and contains either a diamond or an ellipse shape whose color is the exact inverse of the background.
+The key data structure, defined at the start (<em>let gridData;</em>), is a deeply nested array that holds the x, y, width, height, and color index for every subcell, as constructed by the <em>buildGrid()</em> function (lines 37–67).
+</p>
 
-      </p>
+<p class="project-detail">
+The grid is initialized in the <em>setup()</em> function (lines 22–28), where the canvas size is set to the window dimensions and <em>buildGrid()</em> is called to generate the multi-level array.
+Each main grid cell (rows and columns set by <em>let rows</em> and <em>let cols</em>) is itself subdivided into a random number of subcells both vertically and horizontally (<em>minSub</em> and <em>maxSub</em>).
+For each subcell, its position, size, and a random color from the <em>paletteRGB</em> array are stored.
+</p>
+
+<p class="project-detail">
+Rendering is handled by <em>drawGrid()</em> (lines 70–112), which loops through every subcell in the grid.
+For each, it first fills the background rectangle with its palette color.
+Then, based on the global boolean <em>showAllEllipse</em> (line 20), either a diamond (created by connecting the midpoints of each side using <em>beginShape()/endShape()</em>) or an ellipse (drawn with <em>ellipse(cx, cy, w - 2, h - 2)</em>, so it is almost perfectly inscribed in the cell) is drawn at the center.
+The shape uses the inverse of the background color to create a visually strong contrast.
+</p>
+
+<p class="project-detail">
+Interactivity is added with the <em>mousePressed()</em> function (lines 115–148).
+A left mouse click on any subcell changes its color to a different palette value, by updating the fifth element of that subcell’s data array.
+A right click anywhere toggles <em>showAllEllipse</em> globally, causing all diamonds to instantly switch to ellipses (and vice versa).
+To prevent the default context menu on right click, <em>document.oncontextmenu = () => false;</em> is used.
+</p>
+
+<p class="project-detail">
+Overall, this sketch combines randomization, interaction, and color theory to produce a modernist, modular composition reminiscent of contemporary graphic design, with every detail (color, shape, and behavior) controlled by simple, readable code and explained through comments in each block.
+</p>
+
     </div>
 <!-- Blocco 3: GALLERIA -->
 <div class="glass-box gallery-container">
