@@ -862,17 +862,22 @@ body.project0 .glass-box p {
 }
 /* Testo conciso leggermente più grande e centrato */
 .project-concise {
-  font-size: 1.22em;   /* leggermente più grande del normale */
+  font-size: 1.22em;
   font-weight: 500;
   margin-bottom: 18px;
-  text-align: center;
   line-height: 1.5;
+  text-align: justify;
+  hyphens: auto;
 }
+
 
 /* Testo dettagliato */
 .project-detail {
-  font-size: 1em;      /* dimensione normale */
+  font-size: 1em;
   line-height: 1.65;
   text-align: justify;
+  hyphens: auto;
+  margin-bottom: 1em;
 }
+
 
