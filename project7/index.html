@@ -65,28 +65,50 @@
     </div>
     <!-- Blocco 2: DESCRIZIONE -->
     <div class="glass-box">
-      <p>
-        This p5.js sketch visually recreates the pattern seen in a sunflower head, known as a phyllotaxis spiral. At its core, the code simulates how seeds or florets are arranged in nature, relying on the mathematics of the golden angle to produce a naturally balanced distribution. The program begins by initializing a counter variable, let n = 0;, which keeps track of the number of circles that have been drawn. In the setup() function, a full-screen canvas is created with createCanvas(windowWidth, windowHeight);, ensuring that the artwork scales to the size of the browser window. The background is set to white with background(255);, and outlines are removed from the circles using noStroke();, so each point appears clean and distinct.
-Within the draw() function, each animation frame calculates the location for a new circle, spreading outward from the canvas center. The center coordinates are stored in cx and cy. The key to the spiral pattern is how the angle for each step is determined. The code computes the angle using let angle = n * radians(137.5);. Here, 137.5 degrees is the so-called “golden angle”, which, when used in this way, ensures that every new circle is positioned so as not to overlap previous ones, imitating the efficient packing found in sunflower seeds. The distance from the center, or radius, grows with the square root of n, as shown by let radius = 6 * sqrt(n);. This scaling prevents the circles from bunching up as the spiral grows.
-To find the exact position for each circle, the program converts from polar to Cartesian coordinates using the trigonometric functions: let x = cx + radius * cos(angle); and let y = cy + radius * sin(angle);. Color is also varied based on n, with the fill() function producing a smooth gradient effect as more circles are drawn: fill(40 + n % 215, 160, 200, 180);. Each new circle is drawn at its calculated position with ellipse(x, y, 15, 15);. After each circle is placed, the counter n increases by one, so the next frame continues the spiral. Finally, the code automatically stops when the spiral reaches the edge of the canvas—this is checked with if (radius > min(width, height) / 2) noLoop();, which halts the drawing process when further circles would exceed the canvas area.
-Overall, the sketch elegantly combines geometry, mathematics, and color to imitate a sunflower’s spiral arrangement, all by carefully controlling position, angle, and appearance through the core functions and logic of p5.js.
- </p>
+<!-- Blocco 2: DESCRIZIONE -->
+<div class="glass-box">
+  <p class="project-detail">
+    This p5.js sketch visually recreates the pattern seen in a sunflower head, known as a phyllotaxis spiral. At its core, the code simulates how seeds or florets are arranged in nature, relying on the mathematics of the golden angle to produce a naturally balanced distribution.
+  </p>
+
+  <p class="project-detail">
+    The program begins by initializing a counter variable, <em>let n = 0;</em>, which keeps track of the number of circles that have been drawn. In the <em>setup()</em> function, a full-screen canvas is created with <em>createCanvas(windowWidth, windowHeight);</em>, ensuring that the artwork scales to the size of the browser window. The background is set to white with <em>background(255);</em>, and outlines are removed from the circles using <em>noStroke();</em>, so each point appears clean and distinct.
+  </p>
+
+  <p class="project-detail">
+    Within the <em>draw()</em> function, each animation frame calculates the location for a new circle, spreading outward from the canvas center. The center coordinates are stored in <em>cx</em> and <em>cy</em>. The key to the spiral pattern is how the angle for each step is determined. The code computes the angle using <em>let angle = n * radians(137.5);</em>. Here, 137.5 degrees is the so-called “golden angle”, which, when used in this way, ensures that every new circle is positioned so as not to overlap previous ones, imitating the efficient packing found in sunflower seeds. The distance from the center, or radius, grows with the square root of <em>n</em>, as shown by <em>let radius = 6 * sqrt(n);</em>. This scaling prevents the circles from bunching up as the spiral grows.
+  </p>
+
+  <p class="project-detail">
+    To find the exact position for each circle, the program converts from polar to Cartesian coordinates using the trigonometric functions: <em>let x = cx + radius * cos(angle);</em> and <em>let y = cy + radius * sin(angle);</em>. Color is also varied based on <em>n</em>, with the <em>fill()</em> function producing a smooth gradient effect as more circles are drawn: <em>fill(40 + n % 215, 160, 200, 180);</em>. Each new circle is drawn at its calculated position with <em>ellipse(x, y, 15, 15);</em>. After each circle is placed, the counter <em>n</em> increases by one, so the next frame continues the spiral.
+  </p>
+
+  <p class="project-detail">
+    Finally, the code automatically stops when the spiral reaches the edge of the canvas—this is checked with <em>if (radius > min(width, height) / 2) noLoop();</em>, which halts the drawing process when further circles would exceed the canvas area. Overall, the sketch elegantly combines geometry, mathematics, and color to imitate a sunflower’s spiral arrangement, all by carefully controlling position, angle, and appearance through the core functions and logic of p5.js.
+  </p>
+</div>
+
+<!-- Blocco 3: GALLERIA SCORREVOLE -->
+<div class="glass-box gallery-container">
+  <h2 class="gallery-title">IMAGE GALLERY</h2>
+
+  <div class="gallery-wrapper">
+    <button id="gallery-prev" class="gallery-arrow">‹</button>
+
+    <div class="gallery-row">
+      <img src="/images/project_7/1.png" alt="img1" class="gallery-img">
+      <img src="/images/project_7/2.png" alt="img2" class="gallery-img">
+      <img src="/images/project_7/3.png" alt="img3" class="gallery-img">
+      <img src="/images/project_7/4.png" alt="img4" class="gallery-img">
+      <!-- altre immagini se vuoi -->
     </div>
-    <!-- Blocco 3: GALLERIA -->
-    <div class="glass-box">
-      <h3>IMAGE GALLERY</h3>
-      <div class="gallery-row">
-        <img src="/images/project_7/1.png" alt="img1" class="gallery-img">
-        <img src="/images/project_7/2.png" alt="img2" class="gallery-img">
-        <img src="/images/project_7/3.png" alt="img3" class="gallery-img">
-        <img src="/images/project_7/4.png" alt="img4" class="gallery-img">
-        <!-- altre immagini se vuoi -->
-      </div>
-    </div>
+
+    <button id="gallery-next" class="gallery-arrow">›</button>
   </div>
+</div>
 
     <div class="row one-bottom center">
-    <p>©ARMAND LALA 2025</p>
+    <p>©ARMAND LALA 2026</p>
   </div>
 </div>
   
@@ -154,7 +176,6 @@ document.addEventListener('keydown', function(e) {
   }
 });
 </script>
-
-
+<script src="/js/gallery.js"></script>
 </body>
 </html>
