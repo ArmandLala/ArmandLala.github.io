@@ -66,34 +66,60 @@
     </div>
     <!-- Blocco 2: DESCRIZIONE -->
     <div class="glass-box">
-      <p>The HYPNO SPIRAL code generates an animated spiral of circles, inspired by the Fibonacci pattern, using polar coordinates and smooth rotation for a hypnotic effect.
-At the top, two global variables are defined: t (a global time variable for animation) and rot (which controls the rotation of the entire spiral). In setup(), the canvas is set to the full window with a black background, and shapes are drawn without fill, only outlines.
-The main animation happens in draw(). Each frame, a semi-transparent black rectangle is drawn (fill(10, 60); rect(...)) to create a fading trail effect. The origin is moved to the center of the canvas with translate(). Then, the code uses push() and pop() to rotate the spiral by rot radians (rotate(rot); drawSpiral();). The variables t and rot are increased each frame, controlling both the pulsation and the spinning.
-The function drawSpiral() contains the main loop, where for each point (n) up to maxN, the code computes the angle (using the golden angle in radians and a slight sinusoidal oscillation) and a radius that grows like sqrt(n). These polar coordinates are converted to Cartesian (x, y), and each circle is drawn with a white outline whose thickness and diameter also oscillate in time, becoming smaller towards the outside.
-The result is a clean, dynamic spiral made up of gently pulsing white circles, slowly rotating against a black background, for an elegant “hypno-spiral” visual effect.
+<!-- Descrizione dettagliata HYPNO SPIRAL e SUNFLOWER -->
+<p>
+The HYPNO SPIRAL code generates an animated spiral of circles, inspired by the Fibonacci pattern, using polar coordinates and smooth rotation for a hypnotic effect.
+</p>
 
-The SUNFLOWER sketch also uses polar coordinates and the golden angle to create a spiral, as seen in the previous example.
-Here, the global variable n counts the number of steps, and each frame in draw() adds one circle at a position computed from
-angle = n * radians(137.5) and radius = 6 * sqrt(n).
-The (x, y) coordinates center each circle, and fill(40 + n % 215, 160, 200, 180) assigns a unique color to each.
-Unlike the previous sketch, this one does not animate or rotate the spiral: every circle stays fixed, and noLoop() halts the drawing when the spiral reaches the canvas edge.
+<p>
+At the top, two global variables are defined: <code>t</code> (a global time variable for animation) and <code>rot</code> (which controls the rotation of the entire spiral). In <code>setup()</code>, the canvas is set to the full window with a black background, and shapes are drawn without fill, only outlines.
+</p>
+
+<p>
+The main animation happens in <code>draw()</code>. Each frame, a semi-transparent black rectangle is drawn (<code>fill(10, 60); rect(...)</code>) to create a fading trail effect. The origin is moved to the center of the canvas with <code>translate()</code>. Then, the code uses <code>push()</code> and <code>pop()</code> to rotate the spiral by <code>rot</code> radians (<code>rotate(rot); drawSpiral();</code>). The variables <code>t</code> and <code>rot</code> are increased each frame, controlling both the pulsation and the spinning.
+</p>
+
+<p>
+The function <code>drawSpiral()</code> contains the main loop, where for each point (<code>n</code>) up to <code>maxN</code>, the code computes the angle (using the golden angle in radians and a slight sinusoidal oscillation) and a radius that grows like <code>sqrt(n)</code>. These polar coordinates are converted to Cartesian (<code>x, y</code>), and each circle is drawn with a white outline whose thickness and diameter also oscillate in time, becoming smaller towards the outside.
+</p>
+
+<p>
+The result is a clean, dynamic spiral made up of gently pulsing white circles, slowly rotating against a black background, for an elegant “hypno-spiral” visual effect.
+</p>
+
+<p>
+The SUNFLOWER sketch also uses polar coordinates and the golden angle to create a spiral, as seen in the previous example. Here, the global variable <code>n</code> counts the number of steps, and each frame in <code>draw()</code> adds one circle at a position computed from:
+<code>angle = n * radians(137.5)</code> and <code>radius = 6 * sqrt(n)</code>.
+</p>
+
+<p>
+The (<code>x, y</code>) coordinates center each circle, and <code>fill(40 + n % 215, 160, 200, 180)</code> assigns a unique color to each. Unlike the previous sketch, this one does not animate or rotate the spiral: every circle stays fixed, and <code>noLoop()</code> halts the drawing when the spiral reaches the canvas edge.
+</p>
+
+<p>
 In summary, both codes use the same math, but this version builds a static, step-by-step sunflower spiral with changing colors and no motion.
-      </p>
+</p>
+
     </div>
-    <!-- Blocco 3: GALLERIA -->
-    <div class="glass-box">
-      <h3>IMAGE GALLERY</h3>
-      <div class="gallery-row">
-        <img src="/images/project_6/1.png" alt="img1" class="gallery-img">
-        <img src="/images/project_6/2.png" alt="img2" class="gallery-img">
-        <img src="/images/project_6/3.gif" alt="img3" class="gallery-img">
-        <!-- altre immagini se vuoi -->
-      </div>
+<!-- Blocco 3: GALLERIA -->
+<div class="glass-box gallery-container">
+  <h2 class="gallery-title">IMAGE GALLERY</h2>
+
+  <div class="gallery-wrapper">
+    <button id="gallery-prev" class="gallery-arrow">‹</button>
+
+    <div class="gallery-row">
+      <img src="/images/project_6/1.png" alt="img1" class="gallery-img">
+      <img src="/images/project_6/2.png" alt="img2" class="gallery-img">
+      <img src="/images/project_6/3.gif" alt="img3" class="gallery-img">
     </div>
+
+    <button id="gallery-next" class="gallery-arrow">›</button>
   </div>
+</div>
 
     <div class="row one-bottom center">
-    <p>©ARMAND LALA 2025</p>
+    <p>©ARMAND LALA 2026</p>
   </div>
 </div>
   
@@ -161,8 +187,7 @@ document.addEventListener('keydown', function(e) {
   }
 });
 </script>
-
-
+<script src="/js/gallery.js"></script>
 </body>
 </html>
 
