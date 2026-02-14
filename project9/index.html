@@ -63,44 +63,71 @@
   <img src="/images/grey.png" alt="Blue Project" class="cover-img">
 
     </div>
-    <!-- Blocco 2: DESCRIZIONE -->
-    <div class="glass-box">
-      <p>
-        This interactive p5.js program dynamically divides the canvas into four rectangles, with each rectangle’s sides meeting at the current mouse position. Each rectangle changes its grayscale shade based on its area, and the real-time area value (in square centimeters) is displayed at the center of each quadrant, with the text size automatically adapting to fit.
-At the beginning, the setup() function creates a full-window canvas using createCanvas(windowWidth, windowHeight). It sets rectangles to be drawn from corner to corner with rectMode(CORNERS), centers all text via textAlign(CENTER, CENTER), and hides the default mouse cursor to display a custom indicator later.
-Inside the main drawing loop, draw(), the program continuously updates the scene:
-It defines the coordinates of the four corners of the canvas (top-left, top-right, bottom-left, bottom-right), and uses constrain() to keep the mouse position within window bounds.
+<!-- Blocco 2: DESCRIZIONE -->
+<div class="glass-box">
+  <p class="project-detail">
+    This interactive p5.js program dynamically divides the canvas into four rectangles, with each rectangle’s sides meeting at the current mouse position. Each rectangle changes its grayscale shade based on its area, and the real-time area value (in square centimeters) is displayed at the center of each quadrant, with the text size automatically adapting to fit.
+  </p>
 
-It calculates the base and height of each rectangle, and thus its area (e.g., the top-left quadrant’s area is areaTL = abs(mx) * abs(my)).
+  <p class="project-detail">
+    At the beginning, the <em>setup()</em> function creates a full-window canvas using <em>createCanvas(windowWidth, windowHeight)</em>. It sets rectangles to be drawn from corner to corner with <em>rectMode(CORNERS)</em>, centers all text via <em>textAlign(CENTER, CENTER)</em>, and hides the default mouse cursor to display a custom indicator later.
+  </p>
 
-Using min() and max(), it determines the smallest and largest areas among the four quadrants, mapping each area to a grayscale value using map(). The smallest area is black, the largest is white, and intermediate values are mapped to various shades of gray.
+  <p class="project-detail">
+    Inside the main drawing loop, <em>draw()</em>, the program continuously updates the scene. It defines the coordinates of the four corners of the canvas (top-left, top-right, bottom-left, bottom-right), and uses <em>constrain()</em> to keep the mouse position within window bounds.
+  </p>
 
-Each area is converted from pixels squared to square centimeters with the formula area_cm2 = area_px / (37.8 * 37.8), where 37.8 is an approximate number of pixels per centimeter on a standard display.
+  <p class="project-detail">
+    It calculates the base and height of each rectangle, and thus its area (e.g., the top-left quadrant’s area is <em>areaTL = abs(mx) * abs(my)</em>).
+  </p>
 
-The rectangles are drawn using the computed grayscale value with fill(), and outlined in thick black (stroke(0) and strokeWeight(6)).
+  <p class="project-detail">
+    Using <em>min()</em> and <em>max()</em>, it determines the smallest and largest areas among the four quadrants, mapping each area to a grayscale value using <em>map()</em>. The smallest area is black, the largest is white, and intermediate values are mapped to various shades of gray.
+  </p>
 
-At the center of each rectangle, the program displays the area value (in cm²) using text(). The text color is chosen automatically (white or black) for visibility based on the rectangle’s background, and the text size dynamically adjusts so that it never overflows the quadrant.
+  <p class="project-detail">
+    Each area is converted from pixels squared to square centimeters with the formula <em>area_cm2 = area_px / (37.8 * 37.8)</em>, where 37.8 is an approximate number of pixels per centimeter on a standard display.
+  </p>
 
-Finally, a small yellow circle with a black border is drawn at the current mouse position, acting as a clear and modern custom pointer.
+  <p class="project-detail">
+    The rectangles are drawn using the computed grayscale value with <em>fill()</em>, and outlined in thick black using <em>stroke(0)</em> and <em>strokeWeight(6)</em>.
+  </p>
 
-This system allows for real-time visualization of how the canvas is subdivided and how the area of each rectangle changes as you move the mouse, providing both a graphical (color) and numerical (area) feedback for each quadrant
-</p>
+  <p class="project-detail">
+    At the center of each rectangle, the program displays the area value (in cm²) using <em>text()</em>. The text color is chosen automatically (white or black) for visibility based on the rectangle’s background, and the text size dynamically adjusts so that it never overflows the quadrant.
+  </p>
+
+  <p class="project-detail">
+    Finally, a small yellow circle with a black border is drawn at the current mouse position, acting as a clear and modern custom pointer.
+  </p>
+
+  <p class="project-detail">
+    This system allows for real-time visualization of how the canvas is subdivided and how the area of each rectangle changes as you move the mouse, providing both a graphical (color) and numerical (area) feedback for each quadrant.
+  </p>
+</div>
+
+<!-- Blocco 3: GALLERIA SCORREVOLE -->
+<div class="glass-box gallery-container">
+  <h2 class="gallery-title">IMAGE GALLERY</h2>
+
+  <div class="gallery-wrapper">
+    <button id="gallery-prev" class="gallery-arrow">‹</button>
+
+    <div class="gallery-row">
+      <img src="/images/project_9/1.png" alt="img1" class="gallery-img">
+      <img src="/images/project_9/2.png" alt="img2" class="gallery-img">
+      <img src="/images/project_9/3.png" alt="img3" class="gallery-img">
+      <img src="/images/project_9/4.png" alt="img4" class="gallery-img">
+      <!-- altre immagini se vuoi -->
     </div>
-    <!-- Blocco 3: GALLERIA -->
-    <div class="glass-box">
-      <h3>IMAGE GALLERY</h3>
-      <div class="gallery-row">
-        <img src="/images/project_9/1.png" alt="img1" class="gallery-img">
-        <img src="/images/project_9/2.png" alt="img2" class="gallery-img">
-        <img src="/images/project_9/3.png" alt="img3" class="gallery-img">
-        <img src="/images/project_9/4.png" alt="img4" class="gallery-img">
-        <!-- altre immagini se vuoi -->
-      </div>
-    </div>
+
+    <button id="gallery-next" class="gallery-arrow">›</button>
   </div>
+</div>
+
 
     <div class="row one-bottom center">
-    <p>©ARMAND LALA 2025</p>
+    <p>©ARMAND LALA 2026</p>
   </div>
 </div>
   
@@ -168,7 +195,6 @@ document.addEventListener('keydown', function(e) {
   }
 });
 </script>
-
-
+<script src="/js/gallery.js"></script>
 </body>
 </html>
