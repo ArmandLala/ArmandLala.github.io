@@ -65,15 +65,43 @@
     </div>
     <!-- Blocco 2: DESCRIZIONE -->
     <div class="glass-box">
-      <p>
-        This code creates a dynamic, interactive fractal generator using either squares or triangles, depending on user selection. The visual logic and recursive pattern are inspired by “Recursive Triangle” by Hiraga (link), adapted and extended here to allow both square and triangle tilings with interactive controls. At its core, the script recursively draws grids of either deformed squares or tessellated equilateral triangles, each filled with a complex "frame" pattern created through recursive subdivision.
+<p class="project-detail">
+This code creates a dynamic, interactive fractal generator using either squares or triangles, depending on user selection.
+The visual logic and recursive pattern are inspired by “Recursive Triangle” by Hiraga (link), adapted and extended here to allow both square and triangle tilings with interactive controls.
+At its core, the script recursively draws grids of either deformed squares or tessellated equilateral triangles, each filled with a complex "frame" pattern created through recursive subdivision.
+</p>
+
+<p class="project-detail">
 The process started by playing with a code base that allowed me to see the workings and logic behind fractal generation. (link)
-Upon startup, the program defines key global variables such as frac (which sets the recursion depth), scaleX (which determines the deformation of the fractal's inner shapes), and shapeType (which toggles between 'square' and 'triangle' modes via GUI buttons). The canvas is sized to fit the browser window, with color and style settings established in setup(). GUI elements are built with createGUI(), letting users increase or decrease the fractal depth (frac) and switch between square and triangle tilings in real time.
-The function setGridParams() calculates the geometry and centering offsets (offsetX, offsetY) needed to fill the canvas with a uniform grid, adjusting for the chosen shape. For squares, the grid is built by fitting a set number of rows (nRows) vertically, then filling horizontally. For triangles, the algorithm computes the side length so that the desired number of triangle rows fits vertically, and then arranges the triangles in a honeycomb pattern, shifting every other row by half a cell for tight tiling.
-The run() function clears the canvas and triggers the main drawing process, calling either the square or triangle rendering logic as needed. For squares, nested loops fill the canvas with deformed squares, each recursively subdivided using drawDeformedSquare(). This function creates a "frame" by drawing both the outer and inner square at each recursion, and then fills the gaps with smaller triangles drawn via drawRecursiveTriangle(). The recursion continues until the base case, which simply draws the innermost shape.
-For triangles, the drawAllTriangles() function covers the canvas with alternating upward- and downward-pointing equilateral triangles. Each triangle is recursively drawn using drawDeformedTriangle(), which works analogously to the square version, generating inner and outer triangles and recursively subdividing the pattern.
-User interaction is seamless: moving the mouse horizontally alters the scaleX value, dynamically changing the deformation of each fractal layer (mouseMoved()), while resizing the window re-triggers the drawing to keep the pattern centered (windowResized()). All code is modular and clearly divided by function, making it easy to extend with new features or shapes in the future. Overall, this code is a concise and flexible demonstration of recursive geometric art, combining mathematical rigor with interactive aesthetics.
-      </p>
+Upon startup, the program defines key global variables such as <em>frac</em> (which sets the recursion depth), <em>scaleX</em> (which determines the deformation of the fractal's inner shapes), and <em>shapeType</em> (which toggles between 'square' and 'triangle' modes via GUI buttons).
+The canvas is sized to fit the browser window, with color and style settings established in <em>setup()</em>.
+GUI elements are built with <em>createGUI()</em>, letting users increase or decrease the fractal depth (<em>frac</em>) and switch between square and triangle tilings in real time.
+</p>
+
+<p class="project-detail">
+The function <em>setGridParams()</em> calculates the geometry and centering offsets (<em>offsetX</em>, <em>offsetY</em>) needed to fill the canvas with a uniform grid, adjusting for the chosen shape.
+For squares, the grid is built by fitting a set number of rows (<em>nRows</em>) vertically, then filling horizontally.
+For triangles, the algorithm computes the side length so that the desired number of triangle rows fits vertically, and then arranges the triangles in a honeycomb pattern, shifting every other row by half a cell for tight tiling.
+</p>
+
+<p class="project-detail">
+The <em>run()</em> function clears the canvas and triggers the main drawing process, calling either the square or triangle rendering logic as needed.
+For squares, nested loops fill the canvas with deformed squares, each recursively subdivided using <em>drawDeformedSquare()</em>.
+This function creates a "frame" by drawing both the outer and inner square at each recursion, and then fills the gaps with smaller triangles drawn via <em>drawRecursiveTriangle()</em>.
+The recursion continues until the base case, which simply draws the innermost shape.
+</p>
+
+<p class="project-detail">
+For triangles, the <em>drawAllTriangles()</em> function covers the canvas with alternating upward- and downward-pointing equilateral triangles.
+Each triangle is recursively drawn using <em>drawDeformedTriangle()</em>, which works analogously to the square version, generating inner and outer triangles and recursively subdividing the pattern.
+</p>
+
+<p class="project-detail">
+User interaction is seamless: moving the mouse horizontally alters the <em>scaleX</em> value, dynamically changing the deformation of each fractal layer (<em>mouseMoved()</em>), while resizing the window re-triggers the drawing to keep the pattern centered (<em>windowResized()</em>).
+All code is modular and clearly divided by function, making it easy to extend with new features or shapes in the future.
+Overall, this code is a concise and flexible demonstration of recursive geometric art, combining mathematical rigor with interactive aesthetics.
+</p>
+
     </div>
 <!-- Blocco 3: GALLERIA -->
 <div class="glass-box gallery-container">
@@ -99,7 +127,7 @@ User interaction is seamless: moving the mouse horizontally alters the scaleX va
 
 
     <div class="row one-bottom center">
-    <p>©ARMAND LALA 2025</p>
+    <p>©ARMAND LALA 2026</p>
   </div>
 </div>
   
