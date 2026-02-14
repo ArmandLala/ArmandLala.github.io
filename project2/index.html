@@ -75,22 +75,28 @@ For triangles, the drawAllTriangles() function covers the canvas with alternatin
 User interaction is seamless: moving the mouse horizontally alters the scaleX value, dynamically changing the deformation of each fractal layer (mouseMoved()), while resizing the window re-triggers the drawing to keep the pattern centered (windowResized()). All code is modular and clearly divided by function, making it easy to extend with new features or shapes in the future. Overall, this code is a concise and flexible demonstration of recursive geometric art, combining mathematical rigor with interactive aesthetics.
       </p>
     </div>
-    <!-- Blocco 3: GALLERIA -->
-    <div class="glass-box">
-      <h3>IMAGE GALLERY</h3>
-      <div class="gallery-row">
-        <img src="/images/project_2/1.png" alt="img1" class="gallery-img">
-        <img src="/images/project_2/2.png" alt="img2" class="gallery-img">
-        <img src="/images/project_2/3.png" alt="img3" class="gallery-img">
-        <img src="/images/project_2/4.png" alt="img4" class="gallery-img">
-        <img src="/images/project_2/5.png" alt="img5" class="gallery-img">
-        <img src="/images/project_2/6.png" alt="img6" class="gallery-img">
-        <img src="/images/project_2/7.png" alt="img7" class="gallery-img">
-        <img src="/images/project_2/8.png" alt="img8" class="gallery-img">
-        <!-- altre immagini se vuoi -->
-      </div>
+<!-- Blocco 3: GALLERIA -->
+<div class="glass-box gallery-container">
+  <h2 class="gallery-title">IMAGE GALLERY</h2>
+
+  <div class="gallery-wrapper">
+    <button id="gallery-prev" class="gallery-arrow">‹</button>
+
+    <div class="gallery-row">
+      <img src="/images/project_2/1.png" alt="img1" class="gallery-img">
+      <img src="/images/project_2/2.png" alt="img2" class="gallery-img">
+      <img src="/images/project_2/3.png" alt="img3" class="gallery-img">
+      <img src="/images/project_2/4.png" alt="img4" class="gallery-img">
+      <img src="/images/project_2/5.png" alt="img5" class="gallery-img">
+      <img src="/images/project_2/6.png" alt="img6" class="gallery-img">
+      <img src="/images/project_2/7.png" alt="img7" class="gallery-img">
+      <img src="/images/project_2/8.png" alt="img8" class="gallery-img">
     </div>
+
+    <button id="gallery-next" class="gallery-arrow">›</button>
   </div>
+</div>
+
 
     <div class="row one-bottom center">
     <p>©ARMAND LALA 2025</p>
@@ -162,6 +168,6 @@ document.addEventListener('keydown', function(e) {
 });
 </script>
 
-
+<script src="/js/gallery.js"></script>
 </body>
 </html>
