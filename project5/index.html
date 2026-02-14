@@ -65,45 +65,63 @@
     </div>
     <!-- Blocco 2: DESCRIZIONE -->
     <div class="glass-box">
-      <p>
-        The code for Urban Mycelium builds an interactive simulation based on the behavior of
-autonomous agents (the "mold") moving through a digital map of Rome. The structure is divided
-into several main parts that handle graphics, logic, and interaction.
-When the sketch starts, the program loads an image of Rome (roma_1.png) which has been
-processed to highlight dark paths. These paths represent viable routes that the mold can travel.
-The image is resized and turned into pixel data so that the program can check whether a
-specific point on the map is walkable.
+      <p class="project-detail">
+The code for <em>Urban Mycelium</em> builds an interactive simulation based on the behavior of autonomous agents (the <em>"mold"</em>) moving through a digital map of Rome.
+The structure is divided into several main parts that handle graphics, logic, and interaction.
+</p>
+
+<p class="project-detail">
+When the sketch starts, the program loads an image of Rome (<em>roma_1.png</em>) which has been processed to highlight dark paths.
+These paths represent viable routes that the mold can travel.
+The image is resized and turned into pixel data so that the program can check whether a specific point on the map is walkable.
+</p>
+
+<p class="project-detail">
 Two off-screen canvases are used in parallel:
-● trailCanvas shows the short-term movement of the mold as glowing trails.
-● heatmapCanvas builds up a long-term trace of where the mold has passed, using color
-to show "hotspots" of activity.
+<ul>
+<li><em>trailCanvas</em> shows the short-term movement of the mold as glowing trails.</li>
+<li><em>heatmapCanvas</em> builds up a long-term trace of where the mold has passed, using color to show "hotspots" of activity.</li>
+</ul>
+</p>
 
-The mold agents are created when the user clicks on the canvas for the first time. They spawn
-at the nearest valid location (a thick channel) and begin exploring the map. Each mold moves
-based on a combination of random wandering and attraction to nearby “nodes,” which represent
-districts of Rome. These nodes have three properties: income, public services, and toxicity.
+<p class="project-detail">
+The mold agents are created when the user clicks on the canvas for the first time.
+They spawn at the nearest valid location (a thick channel) and begin exploring the map.
+Each mold moves based on a combination of random wandering and attraction to nearby <em>nodes</em>, which represent districts of Rome.
+These nodes have three properties: <em>income</em>, <em>public services</em>, and <em>toxicity</em>.
+</p>
 
-The mold chooses which node to approach based on a calculated “utility” score (income +
-services − toxicity), but with a bit of randomness added. If it finds a node with high utility and
-stays near it long enough, it can decide to "settle" there. Once settled, the mold stops moving
-but still influences the data.
-Each node is a point on the map representing a real Roman neighborhood. The values for
-income, services, and toxicity are manually set based on general knowledge of the city. These
-values change during the simulation: income and services go up slightly when mold gathers
-near a node, but toxicity increases if the population becomes too dense. This models a
-feedback loop, where too much growth can lead to environmental stress.
-The user can hover over any node to see a popup with information: the district’s name, current
-values, and how many mold agents are interacting with it.
-Visually, the simulation shows agents as pulsating blue circles. As they move, they leave behind
-soft trails on the trailCanvas, and their movement adds color to the heatmapCanvas,
-making it easy to see which parts of the city are most active.
-The simulation also includes a slider that allows the user to control the speed of the agents in
-real time, offering a way to slow down or accelerate the spread.
+<p class="project-detail">
+The mold chooses which node to approach based on a calculated <em>“utility”</em> score (<em>income + services − toxicity</em>), but with a bit of randomness added.
+If it finds a node with high utility and stays near it long enough, it can decide to <em>"settle"</em> there.
+Once settled, the mold stops moving but still influences the data.
+</p>
 
-The code creates a system where simple agents, following local rules and responding to their
-environment, generate complex, organic-looking patterns. It reflects how individuals can
-collectively shape the dynamics of a city over time, just like mycelium growing through a
-landscape.</p>
+<p class="project-detail">
+Each node is a point on the map representing a real Roman neighborhood.
+The values for <em>income</em>, <em>services</em>, and <em>toxicity</em> are manually set based on general knowledge of the city.
+These values change during the simulation: <em>income</em> and <em>services</em> go up slightly when mold gathers near a node, but <em>toxicity</em> increases if the population becomes too dense.
+This models a feedback loop, where too much growth can lead to environmental stress.
+</p>
+
+<p class="project-detail">
+The user can hover over any node to see a popup with information: the district’s name, current values, and how many mold agents are interacting with it.
+</p>
+
+<p class="project-detail">
+Visually, the simulation shows agents as pulsating blue circles.
+As they move, they leave behind soft trails on the <em>trailCanvas</em>, and their movement adds color to the <em>heatmapCanvas</em>, making it easy to see which parts of the city are most active.
+</p>
+
+<p class="project-detail">
+The simulation also includes a slider that allows the user to control the speed of the agents in real time, offering a way to slow down or accelerate the spread.
+</p>
+
+<p class="project-detail">
+The code creates a system where simple agents, following local rules and responding to their environment, generate complex, organic-looking patterns.
+It reflects how individuals can collectively shape the dynamics of a city over time, just like mycelium growing through a landscape.
+</p>
+
     </div>
  <!-- Blocco 3: GALLERIA -->
 <div class="glass-box gallery-container">
@@ -126,7 +144,7 @@ landscape.</p>
 </div>
 
     <div class="row one-bottom center">
-    <p>©ARMAND LALA 2025</p>
+    <p>©ARMAND LALA 2026</p>
   </div>
 </div>
   
