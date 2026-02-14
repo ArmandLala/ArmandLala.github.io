@@ -850,3 +850,6 @@ body.project0 .glass-box p {
   color: #fff;
 }
 
+#info.glass-box {
+  margin-top: 90px;  /* sposta la box sotto la navbar */
+}
