@@ -103,17 +103,20 @@
       gap: 9px;
     }
 
-    form.contact-form input,
-    form.contact-form textarea {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1.5px solid rgba(255,255,255,0.3);
-      background: rgba(255,255,255,0.2);
-      color: #fff;
-      font-size: 1em;
-      resize: vertical;
-    }
+  form.contact-form input,
+form.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 1em;
+
+  resize: none;              /* ❌ disabilita resize manuale */
+  overflow-y: hidden;        /* niente scrollbar brutto */
+  line-height: 1.4em;
+}
 
     form.contact-form input::placeholder,
     form.contact-form textarea::placeholder {
@@ -137,6 +140,26 @@
     form.contact-form button:hover {
       background: rgba(80,140,255,0.4);
     }
+
+    /* Scrollbar elegante (Webkit: Chrome, Edge, Safari) */
+form.contact-form textarea::-webkit-scrollbar {
+  width: 6px;
+}
+
+form.contact-form textarea::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+}
+
+form.contact-form textarea::-webkit-scrollbar-thumb {
+  background: rgba(120,180,255,0.4);
+  border-radius: 10px;
+}
+
+form.contact-form textarea::-webkit-scrollbar-thumb:hover {
+  background: rgba(120,180,255,0.65);
+}
+
 
     /* Responsive mobile */
     @media (max-width: 600px) {
@@ -215,7 +238,7 @@
       <input type="text" name="name" placeholder="Your full name" required>
       <input type="email" name="email" placeholder="Your email" required>
       <input type="tel" name="phone" placeholder="Phone (optional)">
-      <textarea name="message" rows="6" placeholder="Your message" required></textarea>
+    <textarea name="message" rows="5" placeholder="Your message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
   </div>
@@ -243,11 +266,15 @@
     });
   });
 
-  const textarea = document.querySelector('textarea[name="message"]');
-  textarea.addEventListener('input', () => {
-    textarea.style.height = 'auto';
-    textarea.style.height = textarea.scrollHeight + 'px';
-  });
+const textarea = document.querySelector('textarea[name="message"]');
+
+const minHeight = textarea.scrollHeight; // altezza iniziale (5 righe)
+
+textarea.addEventListener('input', () => {
+  textarea.style.height = 'auto';
+  textarea.style.height = Math.max(textarea.scrollHeight, minHeight) + 'px';
+});
+
 </script>
 
 </body>
