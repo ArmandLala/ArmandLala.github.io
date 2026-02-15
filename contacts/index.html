@@ -247,12 +247,18 @@
     });
   });
 
-  // Auto-grow textarea
-  const textarea = document.querySelector('textarea[name="message"]');
-  textarea.addEventListener('input', () => {
-    textarea.style.height = 'auto';
-    textarea.style.height = textarea.scrollHeight + 'px';
-  });
+// Auto-grow solo quando serve
+const textarea = document.querySelector('textarea[name="message"]');
+textarea.addEventListener('input', () => {
+  // Altezza naturale del contenuto
+  const scrollHeight = textarea.scrollHeight;
+
+  // Solo se il contenuto supera l'altezza attuale
+  if (scrollHeight > textarea.clientHeight) {
+    textarea.style.height = scrollHeight + 'px';
+  }
+});
+
 </script>
 
 </body>
