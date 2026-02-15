@@ -5,17 +5,19 @@
   <title>Contacts | A L</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet">
-<link rel="stylesheet" href="../css/normalize.css">
-<link rel="stylesheet" href="../css/skeleton.css">
-<link rel="stylesheet" href="../css/customize.css">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+  <link rel="stylesheet" href="../css/customize.css">
   <style>
     .main-center-container {
       min-height: 80vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 48px;
     }
-    .glass-box.contacts-cover {
+    .glass-box.contacts-cover, .glass-box.contact-form-box {
       display: flex;
       flex-direction: row;
       gap: 58px;
@@ -30,6 +32,7 @@
       border: 1.5px solid rgba(255,255,255,0.13);
       margin: 0 auto;
       min-width: 350px;
+      flex-wrap: wrap;
     }
     .contact-icon-btn {
       width: 84px;
@@ -84,8 +87,42 @@
       opacity: 1;
       pointer-events: auto;
     }
+    form.contact-form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 400px;
+      gap: 18px;
+    }
+    form.contact-form input, form.contact-form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      font-size: 1em;
+      resize: vertical;
+    }
+    form.contact-form input::placeholder,
+    form.contact-form textarea::placeholder {
+      color: rgba(255,255,255,0.7);
+    }
+    form.contact-form button {
+      padding: 12px 20px;
+      border-radius: 16px;
+      border: none;
+      cursor: pointer;
+      background: rgba(80,140,255,0.25);
+      color: #fff;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    form.contact-form button:hover {
+      background: rgba(80,140,255,0.4);
+    }
     @media (max-width: 600px) {
-      .glass-box.contacts-cover {
+      .glass-box.contacts-cover, .glass-box.contact-form-box {
         flex-direction: column;
         gap: 34px;
         min-width: unset;
@@ -99,10 +136,6 @@
         width: 30px;
         height: 30px;
       }
-.contact-icon-btn svg {
-  display: block;
-}
-
     }
   </style>
 </head>
@@ -112,7 +145,7 @@
   <div class="navbar-left">
     <a href="/" class="navbar-home" title="Home">
       <svg width="24" height="24" fill="white" viewBox="0 0 24 24" style="vertical-align: middle;">
-        <path d="M3 11l9-9 9 9h-2v8a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-4h-2v4a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-8H3z" stroke="white" stroke-width="2" fill="none"/>
+        <path d="M3 11l9-9 9 9h-2v8a2 2 0 0 1-2 2h-2v4h-2v4a2 2 0 0 1-2-2v-8H3z" stroke="white" stroke-width="2" fill="none"/>
       </svg>
     </a>
   </div>
@@ -139,55 +172,63 @@
 </nav>
 <!-- NAVBAR END -->
 
+<div class="main-center-container">
 
-  <!-- CENTRO PAGINA -->
-  <div class="main-center-container">
-    <div class="glass-box contacts-cover">
-      <!-- Instagram -->
-      <a class="contact-icon-btn" href="https://www.instagram.com/charlie_ff/" target="_blank" title="Instagram">
-        <!-- Instagram SVG, centrata meglio -->
-<svg viewBox="0 0 48 48">
-  <rect x="9" y="9" width="30" height="30" rx="8"/>
-  <circle cx="24" cy="24" r="8.2"/>
-  <circle cx="34" cy="14" r="2.2"/>
-</svg>
-      </a>
-      <!-- Email -->
-      <button class="contact-icon-btn" id="copy-mail-btn" title="Copy e-mail address">
-        
-<!-- Mail SVG, centrata meglio -->
-<svg viewBox="0 0 48 48">
-  <rect x="8" y="13" width="32" height="22" rx="6"/>
-  <polyline points="8,13 24,28 40,13"/>
-</svg>
-      </button>
-    </div>
-    <!-- Popup Copiato -->
-    <div id="copied-popup">E-mail address copied!</div>
+  <!-- ICONS -->
+  <div class="glass-box contacts-cover">
+    <!-- Instagram -->
+    <a class="contact-icon-btn" href="https://www.instagram.com/charlie_ff/" target="_blank" title="Instagram">
+      <svg viewBox="0 0 48 48">
+        <rect x="9" y="9" width="30" height="30" rx="8"/>
+        <circle cx="24" cy="24" r="8.2"/>
+        <circle cx="34" cy="14" r="2.2"/>
+      </svg>
+    </a>
+    <!-- Email -->
+    <button class="contact-icon-btn" id="copy-mail-btn" title="Copy e-mail address">
+      <svg viewBox="0 0 48 48">
+        <rect x="8" y="13" width="32" height="22" rx="6"/>
+        <polyline points="8,13 24,28 40,13"/>
+      </svg>
+    </button>
+  </div>
+  <div id="copied-popup">E-mail address copied!</div>
+
+  <!-- FORM -->
+  <div class="glass-box contact-form-box">
+    <form class="contact-form" action="https://formspree.io/f/mnqlzxyz" method="POST">
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" rows="6" placeholder="Your message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </div>
 
-  <div class="row one-bottom center">
-    <p>©ARMAND LALA 2026</p>
-  </div>
+</div>
 
-  <!-- Scripts p5.js + tuoi js per lo sfondo! -->
+<div class="row one-bottom center">
+  <p>©ARMAND LALA 2026</p>
+</div>
+
+<!-- Scripts p5.js + sfondo -->
 <script src="../js/p5.js"></script>
 <script src="../js/p5.sound.min.js"></script>
 <script src="../js/mold.js"></script>
 <script src="../js/sketch.js"></script>
-  <script>
-    // Sostituisci qui con la tua email tra virgolette!
-    const yourEmail = "armand.lala0@gmail.com";
-    const btn = document.getElementById("copy-mail-btn");
-    const popup = document.getElementById("copied-popup");
-    btn.addEventListener("click", () => {
-      navigator.clipboard.writeText(yourEmail).then(() => {
-        popup.classList.add("visible");
-        setTimeout(() => {
-          popup.classList.remove("visible");
-        }, 1700);
-      });
+
+<script>
+  // Copia email
+  const yourEmail = "armand.lala0@gmail.com";
+  const btn = document.getElementById("copy-mail-btn");
+  const popup = document.getElementById("copied-popup");
+  btn.addEventListener("click", () => {
+    navigator.clipboard.writeText(yourEmail).then(() => {
+      popup.classList.add("visible");
+      setTimeout(() => {
+        popup.classList.remove("visible");
+      }, 1700);
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
