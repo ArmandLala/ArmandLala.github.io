@@ -108,16 +108,20 @@
     form.contact-form textarea::placeholder {
       color: rgba(255,255,255,0.7);
     }
-    form.contact-form button {
-      padding: 12px 20px;
-      border-radius: 16px;
-      border: none;
-      cursor: pointer;
-      background: rgba(80,140,255,0.25);
-      color: #fff;
-      font-weight: 600;
-      transition: 0.2s;
-    }
+form.contact-form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  background: rgba(80,140,255,0.25);
+  color: #fff;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
     form.contact-form button:hover {
       background: rgba(80,140,255,0.4);
     }
@@ -232,13 +236,12 @@
   });
 
   // Auto-grow textarea solo quando necessario
-  const textarea = document.querySelector('textarea[name="message"]');
-  textarea.addEventListener('input', () => {
-    const scrollHeight = textarea.scrollHeight;
-    if (scrollHeight > textarea.clientHeight) {
-      textarea.style.height = scrollHeight + 'px';
-    }
-  });
+const textarea = document.querySelector('textarea[name="message"]');
+textarea.addEventListener('input', () => {
+  textarea.style.height = 'auto'; // reset altezza prima di calcolare scrollHeight
+  textarea.style.height = textarea.scrollHeight + 'px';
+});
+
 </script>
 
 </body>
