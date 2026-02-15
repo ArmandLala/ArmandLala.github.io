@@ -10,12 +10,13 @@
   <link rel="stylesheet" href="../css/customize.css">
   <style>
     .main-center-container {
-      min-height: 80vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start; /* evita sovrapposizione navbar */
       gap: 48px;
+      margin-top: 140px; /* spazio sotto la navbar */
+      padding-bottom: 80px;
     }
     .glass-box.contacts-cover, .glass-box.contact-form-box {
       display: flex;
