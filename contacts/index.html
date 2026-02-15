@@ -9,20 +9,15 @@
   <link rel="stylesheet" href="../css/skeleton.css">
   <link rel="stylesheet" href="../css/customize.css">
   <style>
-    /* --- Container principale --- */
     .main-center-container {
+      min-height: 80vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start; /* evita sovrapposizione navbar */
+      justify-content: center;
       gap: 48px;
-      margin-top: 140px; /* spazio sotto la navbar */
-      padding-bottom: 80px;
     }
-
-    /* --- Glassbox icone + form --- */
-    .glass-box.contacts-cover,
-    .glass-box.contact-form-box {
+    .glass-box.contacts-cover, .glass-box.contact-form-box {
       display: flex;
       flex-direction: row;
       gap: 58px;
@@ -39,8 +34,6 @@
       min-width: 350px;
       flex-wrap: wrap;
     }
-
-    /* --- Icone social / mail --- */
     .contact-icon-btn {
       width: 84px;
       height: 84px;
@@ -73,8 +66,6 @@
     .contact-icon-btn:active svg {
       stroke: #70caff;
     }
-
-    /* --- Popup email copiato --- */
     #copied-popup {
       position: fixed;
       left: 50%;
@@ -96,17 +87,14 @@
       opacity: 1;
       pointer-events: auto;
     }
-
-    /* --- Form --- */
     form.contact-form {
       display: flex;
       flex-direction: column;
       width: 100%;
       max-width: 400px;
-      gap: 18px;
+      gap: 9px; /* metà del gap precedente */
     }
-    form.contact-form input,
-    form.contact-form textarea {
+    form.contact-form input, form.contact-form textarea {
       width: 100%;
       padding: 12px 14px;
       border-radius: 12px;
@@ -114,8 +102,7 @@
       background: rgba(255,255,255,0.2);
       color: #fff;
       font-size: 1em;
-      resize: none; /* gestito con auto-grow JS */
-      overflow-y: hidden;
+      resize: vertical;
     }
     form.contact-form input::placeholder,
     form.contact-form textarea::placeholder {
@@ -130,17 +117,12 @@
       color: #fff;
       font-weight: 600;
       transition: 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
     form.contact-form button:hover {
       background: rgba(80,140,255,0.4);
     }
-
     @media (max-width: 600px) {
-      .glass-box.contacts-cover,
-      .glass-box.contact-form-box {
+      .glass-box.contacts-cover, .glass-box.contact-form-box {
         flex-direction: column;
         gap: 34px;
         min-width: unset;
@@ -158,13 +140,12 @@
   </style>
 </head>
 <body>
-
  <!-- NAVBAR START -->
 <nav class="navbar">
   <div class="navbar-left">
     <a href="/" class="navbar-home" title="Home">
       <svg width="24" height="24" fill="white" viewBox="0 0 24 24" style="vertical-align: middle;">
-        <path d="M3 11l9-9 9 9h-2v8a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-4h-2v4a2 2 0 0 1-2-2v-8H3z" stroke="white" stroke-width="2" fill="none"/>
+        <path d="M3 11l9-9 9 9h-2v8a2 2 0 0 1-2 2h-2v4h-2v4a2 2 0 0 1-2-2v-8H3z" stroke="white" stroke-width="2" fill="none"/>
       </svg>
     </a>
   </div>
@@ -195,6 +176,7 @@
 
   <!-- ICONS -->
   <div class="glass-box contacts-cover">
+    <!-- Instagram -->
     <a class="contact-icon-btn" href="https://www.instagram.com/charlie_ff/" target="_blank" title="Instagram">
       <svg viewBox="0 0 48 48">
         <rect x="9" y="9" width="30" height="30" rx="8"/>
@@ -202,7 +184,7 @@
         <circle cx="34" cy="14" r="2.2"/>
       </svg>
     </a>
-
+    <!-- Email -->
     <button class="contact-icon-btn" id="copy-mail-btn" title="Copy e-mail address">
       <svg viewBox="0 0 48 48">
         <rect x="8" y="13" width="32" height="22" rx="6"/>
@@ -215,7 +197,9 @@
   <!-- FORM -->
   <div class="glass-box contact-form-box">
     <form class="contact-form" action="https://formspree.io/f/xojndlnq" method="POST">
+      <input type="text" name="name" placeholder="Your full name" required>
       <input type="email" name="email" placeholder="Your email" required>
+      <input type="tel" name="phone" placeholder="Phone (optional)">
       <textarea name="message" rows="6" placeholder="Your message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
@@ -247,18 +231,14 @@
     });
   });
 
-// Auto-grow solo quando serve
-const textarea = document.querySelector('textarea[name="message"]');
-textarea.addEventListener('input', () => {
-  // Altezza naturale del contenuto
-  const scrollHeight = textarea.scrollHeight;
-
-  // Solo se il contenuto supera l'altezza attuale
-  if (scrollHeight > textarea.clientHeight) {
-    textarea.style.height = scrollHeight + 'px';
-  }
-});
-
+  // Auto-grow textarea solo quando necessario
+  const textarea = document.querySelector('textarea[name="message"]');
+  textarea.addEventListener('input', () => {
+    const scrollHeight = textarea.scrollHeight;
+    if (scrollHeight > textarea.clientHeight) {
+      textarea.style.height = scrollHeight + 'px';
+    }
+  });
 </script>
 
 </body>
