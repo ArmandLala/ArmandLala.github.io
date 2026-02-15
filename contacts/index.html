@@ -267,13 +267,16 @@ form.contact-form textarea::-webkit-scrollbar-thumb:hover {
   });
 
 const textarea = document.querySelector('textarea[name="message"]');
-
-const minHeight = textarea.scrollHeight; // altezza iniziale (5 righe)
+// Forza l'altezza iniziale basata su rows
+textarea.style.height = 'auto';
+const minHeight = textarea.scrollHeight;
+textarea.style.height = minHeight + 'px';
 
 textarea.addEventListener('input', () => {
   textarea.style.height = 'auto';
   textarea.style.height = Math.max(textarea.scrollHeight, minHeight) + 'px';
 });
+
 
 </script>
 
