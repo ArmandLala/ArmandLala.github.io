@@ -10,12 +10,13 @@
   <link rel="stylesheet" href="../css/customize.css">
   <style>
     .main-center-container {
-      min-height: 80vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start; /* evita sovrapposizione navbar */
       gap: 48px;
+      margin-top: 140px; /* spazio sotto la navbar */
+      padding-bottom: 80px;
     }
     .glass-box.contacts-cover, .glass-box.contact-form-box {
       display: flex;
@@ -92,7 +93,7 @@
       flex-direction: column;
       width: 100%;
       max-width: 400px;
-      gap: 18px;
+      gap: 9px; /* metà del gap precedente */
     }
     form.contact-form input, form.contact-form textarea {
       width: 100%;
@@ -108,16 +109,20 @@
     form.contact-form textarea::placeholder {
       color: rgba(255,255,255,0.7);
     }
-    form.contact-form button {
-      padding: 12px 20px;
-      border-radius: 16px;
-      border: none;
-      cursor: pointer;
-      background: rgba(80,140,255,0.25);
-      color: #fff;
-      font-weight: 600;
-      transition: 0.2s;
-    }
+form.contact-form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  background: rgba(80,140,255,0.25);
+  color: #fff;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
     form.contact-form button:hover {
       background: rgba(80,140,255,0.4);
     }
@@ -196,8 +201,10 @@
 
   <!-- FORM -->
   <div class="glass-box contact-form-box">
-    <form class="contact-form" action="https://formspree.io/f/mnqlzxyz" method="POST">
+    <form class="contact-form" action="https://formspree.io/f/xojndlnq" method="POST">
+      <input type="text" name="name" placeholder="Your full name" required>
       <input type="email" name="email" placeholder="Your email" required>
+      <input type="tel" name="phone" placeholder="Phone (optional)">
       <textarea name="message" rows="6" placeholder="Your message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
@@ -228,6 +235,14 @@
       }, 1700);
     });
   });
+
+  // Auto-grow textarea solo quando necessario
+const textarea = document.querySelector('textarea[name="message"]');
+textarea.addEventListener('input', () => {
+  textarea.style.height = 'auto'; // reset altezza prima di calcolare scrollHeight
+  textarea.style.height = textarea.scrollHeight + 'px';
+});
+
 </script>
 
 </body>
